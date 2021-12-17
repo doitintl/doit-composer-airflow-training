@@ -22,5 +22,7 @@ By working through this course, you will get experience working with and diagnos
 3. Run `md serve`
 4. In your browser, navigate to `http://localhost:3000`
 
+![mdbook website](mdbook-website.png)
+
 ## Todo
 Host the tutorial in a website
