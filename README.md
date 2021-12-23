@@ -18,7 +18,7 @@ Through this course, you will get experience working with Airflow data pipelines
 
 ## Access the mini-book
 
-This mini-book is hosted on GitHub pages, you can access it from [here](https://doitintl.github.io/doit-composer-airflow-training/index.html)
+This mini-book is hosted on GitHub pages, you can access it from [here](https://doitintl.github.io/doit-composer-airflow-training/index.html).
 
 ![mdbook website](mdbook-website.png)
 
