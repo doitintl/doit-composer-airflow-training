@@ -2,7 +2,7 @@ import unittest
 from unittest import mock
 import pytest
 
-from operators.check_bigquery_dataset_operator import CheckBigQueryOperator
+from operators.check_bigquery_dataset_operator import CheckBigQueryDatasetOperator
 from google.cloud.bigquery.dataset import DatasetListItem
 
 
@@ -27,7 +27,7 @@ DUMMY_DATASETS = [
 class TestCheckBigQueryDatasetOperator(unittest.TestCase):
     @mock.patch('operators.check_bigquery_dataset_operator.BigQueryHook')
     def test_existed_dataset(self, mock_hook):
-        operator = CheckBigQueryOperator(
+        operator = CheckBigQueryDatasetOperator(
             task_id = 'dataset_exists_task',
             dataset_id = DUMMY_DATASET_ID,
         )
@@ -37,7 +37,7 @@ class TestCheckBigQueryDatasetOperator(unittest.TestCase):
 
     @mock.patch('operators.check_bigquery_dataset_operator.BigQueryHook')
     def test_non_existed_dataset(self, mock_hook):
-        operator = CheckBigQueryOperator(
+        operator = CheckBigQueryDatasetOperator(
             task_id = 'dataset_exists_task',
             dataset_id = DUMMY_NON_EXISTED_DATASET_ID,
         )

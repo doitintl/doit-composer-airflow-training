@@ -38,10 +38,10 @@ def branch_func(ti):
 
 
 with DAG(
-    "generate_nudges_dag",
+    "9_generate_nudges_dag",
     description="generate nudges dag",
-    schedule_interval="0 3 * * *",
-    start_date=datetime(2021, 4, 21),
+    schedule_interval=None, #"0 3 * * *",
+    start_date=datetime(2021, 12, 20),
     tags=["custom"],
 ) as dag:
 

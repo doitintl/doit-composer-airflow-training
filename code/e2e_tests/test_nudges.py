@@ -22,6 +22,7 @@ import time
 
 log = logging.getLogger(__name__)
 
+PROJECT_ID = "derrick-sandbox"
 NUDGES_HISTORY_BUCKET = "nudges_history"
 STORE_RAW_DATA_BUCKET = "store_raw_data"
 DATASET = "analytics"
@@ -39,7 +40,7 @@ class TestNudges(unittest.TestCase):
         log.info("Run test: generate and upload raw data to the bucket...")
         self.generate_and_upload_test_files()
         self.trigger_dag()
-        time.sleep(20)
+        time.sleep(30)
         self.check_nudges_in_bigquery()
 
     # def tearDown(self):
@@ -55,7 +56,7 @@ class TestNudges(unittest.TestCase):
 
     def delete_blob(self, bucket_name, blob_name):
         """Deletes a blob from the bucket."""
-        storage_client = storage.Client(project="airflow-talk")
+        storage_client = storage.Client(project=PROJECT_ID)
 
         bucket = storage_client.bucket(bucket_name)
         blob = bucket.blob(blob_name)
@@ -68,7 +69,7 @@ class TestNudges(unittest.TestCase):
 
     def upload_blob(self, bucket_name, source_file_name, destination_blob_name):
         """Uploads a file to the bucket."""
-        storage_client = storage.Client(project="airflow-talk")
+        storage_client = storage.Client(project=PROJECT_ID)
         bucket = storage_client.bucket(bucket_name)
         blob = bucket.blob(destination_blob_name)
 
@@ -82,7 +83,7 @@ class TestNudges(unittest.TestCase):
         self.delete_table(f"{DATASET}.items")
 
     def delete_table(self, table_id):
-        client = bigquery.Client(project="airflow-talk")
+        client = bigquery.Client(project=PROJECT_ID)
         client.delete_table(table_id, not_found_ok=True)  # Make an API request.
         log.info(f"Deleted table '{table_id}'.")
 
@@ -102,12 +103,12 @@ class TestNudges(unittest.TestCase):
 
     def trigger_dag(self):
         subprocess.run(
-            "docker-compose run airflow-scheduler airflow dags trigger generate_nudges_dag",
+            "docker-compose run airflow-scheduler airflow dags trigger 9_generate_nudges_dag",
             shell=True,
         )
 
     def check_nudges_in_bigquery(self):
-        client = bigquery.Client(project="airflow-talk")
+        client = bigquery.Client(project=PROJECT_ID)
         query_job = client.query(
             f"""
             SELECT * FROM `{DATASET}.nudges`
