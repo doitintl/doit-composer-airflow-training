@@ -18,7 +18,11 @@ Through this course, you will get experience working with Airflow data pipelines
 
 ## Access the mini-book
 
-This mini-book is hosted on GitHub pages, you can access it from [here](https://doitintl.github.io/doit-composer-airflow-training/index.html).
+To test it locally:
+1. Clone the repo
+2. Install mdBook following the [guide](https://github.com/rust-lang/mdBook#installation)
+3. Run `mdbook serve`
+4. In your browser, navigate to `http://localhost:3000`
 
 ![mdbook website](mdbook-website.png)
 
@@ -26,9 +30,3 @@ This mini-book is hosted on GitHub pages, you can access it from [here](https://
 ## Contribution
 
 If you'd like get involved, either fixing a grammar mistake or adding a new chapter, just send a pull request!
-
-To test it locally:
-1. Clone the repo
-2. Install mdBook following the [guide](https://github.com/rust-lang/mdBook#installation)
-3. Run `mdbook serve`
-4. In your browser, navigate to `http://localhost:3000`
