@@ -29,4 +29,4 @@ To test it locally:
 
 ## Contribution
 
-If you'd like get involved, either fixing a grammar mistake or adding a new chapter, just send a pull request!
+If you'd like to get involved, either fixing a grammar mistake or adding a new chapter, just send a pull request!

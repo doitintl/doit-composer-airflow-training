@@ -5,7 +5,7 @@ Below is a modified version of our first DAG in the previous page.
 
 `code/dags/2_context_manager_dag.py`
 ```python
-{{#include ../../code/dags/2_context_manager_dag.py}}
+{{#include ../../../code/dags/2_context_manager_dag.py}}
 ```
 
 So far, in the two DAGs that we wrote, the tasks run one by one. It is excellent but may not be the most efficient. What if we have a pipeline, we some tasks that can be running in parallel?

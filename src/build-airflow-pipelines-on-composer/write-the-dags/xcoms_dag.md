@@ -8,7 +8,7 @@ Let's create a DAG to exchange value between tasks.
 
 `code/dags/6_xcoms_dag.py`
 ```python
-{{#include ../../code/dags/6_xcoms_dag.py}}
+{{#include ../../../code/dags/6_xcoms_dag.py}}
 ```
 
 ![xcoms dag](airflow-xcoms-dag.png)

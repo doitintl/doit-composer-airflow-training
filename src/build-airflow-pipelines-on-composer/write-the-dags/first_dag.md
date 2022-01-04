@@ -7,7 +7,7 @@ By following the five steps from the previous page, the DAG definition looks lik
 
 `code/dags/1_first_dag.py`
 ```python
-{{#include ../../code/dags/1_first_dag.py}}
+{{#include ../../../code/dags/1_first_dag.py}}
 ```
 
 ![first dag](airflow-first-dag.png)

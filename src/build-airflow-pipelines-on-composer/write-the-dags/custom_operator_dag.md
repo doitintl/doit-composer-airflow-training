@@ -10,14 +10,14 @@ Firstly, let's create a `HelloOperator`. It inherits the `BaseOperator` and over
 
 `code/plugins/operators/hello_operator.py`
 ```python
-{{#include ../../code/plugins/operators/hello_operator.py}}
+{{#include ../../../code/plugins/operators/hello_operator.py}}
 ```
 
 Then we can create a DAG that uses the custom operator `HelloOperator`.
 
 `code/dags/8_custom_operator_dag.py`
 ```python
-{{#include ../../code/dags/8_custom_operator_dag.py}}
+{{#include ../../../code/dags/8_custom_operator_dag.py}}
 ```
 
 To run this DAG in Cloud Composer, the custom Operator file needs to be uploaded to the `$AIRFLOW_HOME/plugins` folder. In the context of Cloud Composer, it is the `plugins` folder under the Cloud Storage bucket.

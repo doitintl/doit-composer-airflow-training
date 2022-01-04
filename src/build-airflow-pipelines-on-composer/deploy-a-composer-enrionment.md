@@ -1,12 +1,12 @@
 # Deploy a Composer environment
 
-Cloud Composer can be deployed via Console, gcloud, API and Terraform. Detailed instructions can be found on Google's [document](https://cloud.google.com/composer/docs/how-to/managing/creating).
+Cloud Composer can be deployed via Console, gcloud, API, and Terraform. Detailed instructions can be found on Google's [document](https://cloud.google.com/composer/docs/how-to/managing/creating).
 
 In this tutorial, we will create a public IP Composer 1(because Composer 2 is not GA yet) Airflow 2.x environment using **gcloud** cli.
 
 _Below bash script can be found at: `code/deploy-composer.sh`_
 ```bash
-{{#include ../code/deploy-composer.sh}}
+{{#include ../../code/deploy-composer.sh}}
 ```
 
 Below is an example of running it in my sandbox project named `derrick-sandbox`:

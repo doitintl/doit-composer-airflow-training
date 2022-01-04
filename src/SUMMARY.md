@@ -1,6 +1,6 @@
 # Summary
 
-- [Introduction](README.md)
+- [Introduction](../README.md)
 - [Apache Airflow and its concepts](apache-airflow-and-its-concepts.md)
 - [Google Cloud Composer](google-cloud-composer/README.md)
   - [Benefits](google-cloud-composer/benefits.md)
@@ -21,7 +21,6 @@
     - [Custom operator DAG](build-airflow-pipelines-on-composer/write-the-dags/custom_operator_dag.md)
   - [Case study: generate nudges](case-study/README.md)
     - [Create nudges DAG](case-study/create-nudges-dag.md)
-    - [Create custom operators](case-study/create-custom-operators.md)
     - [Testing](case-study/testing.md)
     - [CI and CD](case-study/ci-and-cd.md)
 - [Set up and run Airflow locally](set-up-and-run-airflow-locally.md)

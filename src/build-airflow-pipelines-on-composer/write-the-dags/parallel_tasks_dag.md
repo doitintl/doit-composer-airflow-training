@@ -16,5 +16,5 @@ The code of the DAG looks like this:
 
 `code/dags/3_parallel_tasks_dag.py`
 ```python
-{{#include ../../code/dags/3_parallel_tasks_dag.py}}
+{{#include ../../../code/dags/3_parallel_tasks_dag.py}}
 ```

@@ -8,7 +8,7 @@ To demostrate branching, let's create a DAG that uses Python [random.choice](htt
 
 `code/dags/5_branching_dag.py`
 ```python
-{{#include ../../code/dags/5_branching_dag.py}}
+{{#include ../../../code/dags/5_branching_dag.py}}
 ```
 
 ![branching dag](airflow-branching-dag.png)

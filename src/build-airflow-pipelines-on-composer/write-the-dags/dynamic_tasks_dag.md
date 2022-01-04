@@ -12,7 +12,7 @@ Then, let's create a DAG that uses a for loop to define some tasks. In this exam
 
 `code/dags/4_dynamic_dag.py`
 ```python
-{{#include ../../code/dags/4_dynamic_dag.py}}
+{{#include ../../../code/dags/4_dynamic_dag.py}}
 ```
 
 ![dynamic dag](airflow-dynamic-dag.png)

@@ -11,5 +11,5 @@ In the below DAG, the first task uses `PythonOperator` to print the task context
 
 `code/dags/7_python_operator_and_taskflow_dag.py`
 ```python
-{{#include ../../code/dags/7_python_operator_and_taskflow_dag.py}}
+{{#include ../../../code/dags/7_python_operator_and_taskflow_dag.py}}
 ```
