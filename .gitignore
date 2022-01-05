@@ -5,3 +5,4 @@ logs
 .venv
 *.log
 latest
+index.html
