@@ -24,11 +24,6 @@
     - [Testing](case-study/testing.md)
     - [CI and CD](case-study/ci-and-cd.md)
 - [Set up and run Airflow locally](set-up-and-run-airflow-locally.md)
-- [Common Composer issues](common-composer-issues/README.md)
-  - [Cannot install PyPI packages](common-composer-issues/cannot-install-pypi-packages.md)
-  - [Composer upgrade issues](common-composer-issues/composer-upgrade-issues.md)
-  - [Composer performance issues](common-composer-issues/composer-performance-issues.md)
-  - [Composer connecting to another service](common-composer-issues/composer-connecting-to-another-service.md)
 - [What's next?](what-next.md)
 -----------
 
