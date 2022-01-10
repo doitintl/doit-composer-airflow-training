@@ -12,16 +12,16 @@ You can use Airflow to create workflows as [Directed Acyclic Graphs](https://en.
 
 ## Why Airflow is popular
 
-- Workflows are defined as Python code, so they 
+- You can define workflows as Python code, so they 
   - are more flexible
   - are testable
   - easy to reuse
   - can access the whole Python echo system
 - Battery included platform
-  - It provides libraries to connect
+  - Airflow provides libraries to connect
     - Popular database: MySQL, Postgres, MongoDB, Oracle, SQL Server, Snowflake, BigQuery
     - Services: Databricks, Datadog, ElasticSearch, Jenkins, Salesforce, SendGrid, Slack, Zendesk
-- It can be deployed to public cloud platforms: AWS, GCP, Azure, etc
+- You can deploy Airflow to public cloud platforms: AWS, Azure, and Google Cloud
 - Informational and feature-rich UI to visualize workflows' status, monitor progress, troubleshoot issues, trigger, and re-trigger workflows and tasks in them
 
 ## Beyond the Horizon

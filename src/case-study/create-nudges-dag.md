@@ -16,7 +16,7 @@ Yay, there it is! From it's [document](https://registry.astronomer.io/providers/
 {{#include ../../code/dags/9_generate_nudges_dag.py:66:103}}
 ```
 
-For the `generate_nudges` task, it runs a BigQuery query and saves the results in a BigQuery table. This may look like an ordinary job. However, there isn't an existing Operator that does the job. Therefore we need to create a custom Operator. In this custom Operator, we can use the built-in `BigQueryHook` to interact with BigQuery. We can find its source code on [GitHub](https://github.com/apache/airflow/blob/main/airflow/providers/google/cloud/hooks/bigquery.py#L66).
+The `generate_nudges` task runs a BigQuery query and saves the results in a BigQuery table. It may look like an ordinary job. But unfortunately, there isn't an existing Operator that does the job. Therefore we need to create a custom Operator. In this custom Operator, we can use the built-in `BigQueryHook` to interact with BigQuery. We can find its source code on [GitHub](https://github.com/apache/airflow/blob/main/airflow/providers/google/cloud/hooks/bigquery.py#L66).
 
 Let's call the custom Operator `GenerateNudgesOperator`
 
@@ -53,16 +53,16 @@ Now the DAG looks like this:
 ![case-study-dag-2](case-study-dag-2.png)
 
 ### Avoid duplicated runs
-It is always a good idea to check if today's run finishes. There are multiple ways to do that. If there are multiple data pipelines, an API can be built to record their runs. When a pipeline is kicked off, it checks if the run for that day has been finished by calling the API. If yes, this particular DAG run should not continue with the following tasks.
+It is always a good idea to check if today's run finishes. There are multiple ways to do that. If there are numerous data pipelines, you should build an API to record their runs. When a pipeline is kicked off, it checks if the run for that day has been finished by calling the API. If yes, this particular DAG run should not continue with the following tasks.
 
-In our case study, as we only have one data pipeline, we can assume that, everyday when the email system sends the emails out, it also uploads a file to GCS with the file name being the date of the day. With this design, a few tasks can be added to finalize the DAG.
+In our case study, as we only have one data pipeline, we can assume that every day when the email system sends the emails out, it also uploads a file to GCS with the file name being the date of the day. With this assumption, a few tasks can be added to finalize the DAG.
 
 ![case-study-dag-3](case-study-dag-3.png)
 
 Let's dig into the new tasks.
 
 #### Get latest run date
-As mentioned from the above, we can check if a file named as current date exists in the GCS bucket. To do this, we can use the `GCSListObjectsOperator` from Airflow built-in libraries. The task looks like this:
+As mentioned above, we can check if a file named as current date exists in the GCS bucket. To do this, we can use the `GCSListObjectsOperator` from Airflow built-in libraries. The task looks like this:
 
 `code/dags/9_generate_nudges_dag.py`
 ```python
@@ -92,8 +92,8 @@ From here, Airflow will decide if the DAG run should continue loading data or ju
 ```
 
 ## Summary
-In this chapter, we've walked through how to design and create a DAG to load data from three CSV files and generate nudges in BigQuery. If you'd like to run it, you can run it yourself, be sure to replace the project ID and buckets in the DAG file.
+In this chapter, we've walked through designing and creating a DAG to load data from three CSV files and generate nudges in BigQuery. If you'd like to run it, you can run it yourself, be sure to replace the project ID and buckets in the DAG file.
 ```python
 {{#include ../../code/dags/9_generate_nudges_dag.py:18:20}}
 ```
-Or you can wait til the next chapter in which I will cover the testing strategy including a quick end-to-end test that can generate test files and trigger the DAG.
+Or you can wait until the next chapter, in which I will cover the testing strategy, including a quick end-to-end test that can generate test files and trigger the DAG.

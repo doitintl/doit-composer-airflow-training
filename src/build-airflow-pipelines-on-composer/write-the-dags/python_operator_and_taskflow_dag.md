@@ -6,7 +6,7 @@ Airflow 2.0 adds a new style of authoring dags called the [TaskFlow API](https:/
 
 Let's create a DAG that uses both `PythonOperator` and TaskFlow API to show how to create tasks using Python functions.
 
-In the below DAG, the first task uses `PythonOperator` to print the task context including the parameter(`my_keyword`) that is passed in. The second task and third tasks are created using TaskFlow decorator. These tasks run Python functions without using  `PythonOperator`.
+In the below DAG, the first task uses `PythonOperator` to print the task context, including the parameter(`my_keyword`) that is passed in. The second task and third tasks are created using TaskFlow decorator. These tasks run Python functions without using  `PythonOperator`.
 
 
 `code/dags/7_python_operator_and_taskflow_dag.py`

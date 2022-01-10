@@ -6,14 +6,14 @@ There are a few ways to run Airflow locally:
 3. deploy it using Helm Chart
 
 ## Python virtual environment deployment
-Airflow community created a [guide](https://airflow.apache.org/docs/apache-airflow/stable/start/local.html). It basically creates a SQLite database and runs webserver and worker in two processes.
+Airflow community created a [guide](https://airflow.apache.org/docs/apache-airflow/stable/start/local.html). You basically create a SQLite database and run Airflow webserver and worker in two processes.
 
 This setup is lightweight and suitable to test something quickly. It is not a production-ready setup because it only processes tasks sequentially.
 
 ## Docker-compose
-Using `docker-compose` is the preferred way to run Airflow locally. Again, Airflow community is kindly created a [guide](https://airflow.apache.org/docs/apache-airflow/stable/start/docker.html) including a pre-baked `docker-compose.yaml` file!
+Using `docker-compose` is the preferred way to run Airflow locally. Again, the Airflow community is kindly created a [guide](https://airflow.apache.org/docs/apache-airflow/stable/start/docker.html) including a pre-baked `docker-compose.yaml` file!
 
-When you do `docker-compose up`, a whole Airflow cluster is up including:
+When you do `docker-compose up`, a whole Airflow cluster is up, including:
 - **airflow-scheduler** - The scheduler monitors all tasks and DAGs, then triggers the task instances once their dependencies are complete.
 - **airflow-webserver** - The webserver is available at http://localhost:8080.
 - **airflow-worker** - The worker that executes the tasks given by the scheduler.
@@ -28,4 +28,4 @@ There is only one trick/bug that you should be aware of - Docker has this weird 
 If you see errors after running `docker-comose up`: `Errno 13 - Permission denied: '/opt/airflow/logs/scheduler`, you need to stop the `docker-compose` and run `chmod -R 777 logs/ `. You should be able to start your Airflow cluster again using `docker-comose up`.
 
 ## Helm Chart
-How can we forget Kubernetes these days if we want to deploy something! If you would like to deploy Airflow to Kubernetes. [Here](https://airflow.apache.org/docs/helm-chart/stable/index.html) is a guide from Airflow community.
+How can we forget Kubernetes these days if we want to deploy something! If you would like to deploy Airflow to Kubernetes. [Here](https://airflow.apache.org/docs/helm-chart/stable/index.html) is a guide from the Airflow community.

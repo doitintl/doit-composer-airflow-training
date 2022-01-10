@@ -1,6 +1,6 @@
 # Testing
 
-Just like any software program, Airflow pipelines need to be tested. In Airflow, we usually do unit tests and end-to-end tests to ensure Airflow pipelines work well before deployments.
+Just like any software program, Airflow pipelines need to be tested! In Airflow, we usually do unit tests and end-to-end tests to ensure Airflow pipelines work well before deployments.
 
 In our project, [Pytest](https://docs.pytest.org/) is used as the test runner.
 
@@ -17,18 +17,18 @@ For example, with the `BigQueryHook` being mocked, the `CheckBigQueryDatasetOper
 ```
 
 ## End-to-end tests
-With the unit tests ensuring DAGs and custom plugins are reasonable, we also need some kind of end-to-end tests to ensure the pipeline runs well.
+With the unit tests ensuring DAGs and custom plugins are reasonable, we also need some end-to-end tests to ensure the pipeline runs well.
 
-Like any other end-to-end test, we generate some input, run the program, and check the output. To test our DAG, the test steps look like the below:
+Like any other end-to-end tests, we generate some input, run the program, and check the output. To test our DAG, the test steps look like the below:
 
 1. create and upload three CSV files to GCS
 2. trigger Airflow DAG
 3. wait for 30 seconds for the DAG to finish
 4. check the nudge table is refreshed
 
-Ideally, this test should be running in a test environment where there is a test Composer environment. Then we can trigger the DAG using Airflow REST API by following the Google document [here](https://cloud.google.com/composer/docs/access-airflow-api).
+Ideally, this test should be running in a test environment with a test Composer environment. Then we can trigger the DAG using Airflow REST API by following the Google document [here](https://cloud.google.com/composer/docs/access-airflow-api).
 
-I understand that there may be expensive to host a test Composer because it needs to run 24/7. Therefore I recommend running Airflow locally(I will cover this in the next chapter) with `docker-compose` and using the below code to trigger the DAG:
+I understand that there may be expensive to host a test Composer because it needs to run 24/7. Therefore I recommend running Airflow locally(I will cover more details of this approach in the another chapter) with `docker-compose` and using the below code to trigger the DAG:
 ```python
 {{#include ../../code/e2e_tests/test_nudges.py:104:108}}
 ```

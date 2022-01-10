@@ -3,7 +3,7 @@
 ## Versions
 Currently, there are two versions of Cloud Composer, versions 1 and 2(current in preview).
 
-A full list of Composer versions can be found [here](https://cloud.google.com/composer/docs/concepts/versioning/composer-versions). A typical version looks like:
+You can find the full list of Composer versions from [here](https://cloud.google.com/composer/docs/concepts/versioning/composer-versions). A typical version looks like this:
 
 > composer-1.17.5-airflow-2.1.4
 
@@ -14,7 +14,7 @@ You can consider each `Composer` version contains all the close-sourced Google d
 ## Support and deprecation
 
 ### Composer
-Google supports Cloud Composer versions for a period of time after the version release. During this period, Cloud Composer environments that use these versions are fully supported.
+Google supports Cloud Composer versions for a period of time after the version is released. 
 
 Cloud Composer version support is defined as follows:
 
@@ -28,3 +28,5 @@ A particular version of Apache Airflow found in Cloud Composer is **NOT** always
 - find out if a specific commit from [Airflow open-source project](https://github.com/apache/airflow) is in the version of Composer
 - reproduce issues locally
 - check how an Operator/Sensor/Hook looks like in the version of Composer
+
+In practice, to troubleshoot an Airflow issue from Cloud Composer, you may look into the above repo.

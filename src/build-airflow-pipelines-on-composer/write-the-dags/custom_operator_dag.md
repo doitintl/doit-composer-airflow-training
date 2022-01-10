@@ -1,6 +1,6 @@
 # Custom operator DAG
 
-One thing that makes Airflow so popular is its built-in modules. There are modules connecting to three major public cloud providers, as well as popular services and tools. When writing Airflow pipelines, it is always recommended to use built-in modules. 
+One thing that makes Airflow so popular is its built-in modules. There are built-in modules connecting to three major public cloud providers, as well as popular services and tools. When writing Airflow pipelines, it is always recommended to use built-in modules whenever they are available. 
 
 However, there are occasions when built-in modules cannot fulfill the requirements. Fortunately, Airflow has a simple plugin manager built-in that can integrate external features to its core by simply dropping files in your `$AIRFLOW_HOME/plugins` folder.
 
