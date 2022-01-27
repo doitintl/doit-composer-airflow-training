@@ -9,7 +9,7 @@
   - [Limitations](google-cloud-composer/limitations.md)
 - [Build Airflow pipelines on Composer](build-airflow-pipelines-on-composer/README.md)
   - [Deploy a Composer environment](build-airflow-pipelines-on-composer/deploy-a-composer-enrionment.md)
-  - [A tour of Airflow UI](build-airflow-pipelines-on-composer/a-tour-of-airflow-ui.md)
+  - [A tour of the Airflow UI](build-airflow-pipelines-on-composer/a-tour-of-airflow-ui.md)
   - [Write the DAGs](build-airflow-pipelines-on-composer/write-the-dags/README.md)
     - [First DAG](build-airflow-pipelines-on-composer/write-the-dags/first_dag.md)
     - [Context manager DAG](build-airflow-pipelines-on-composer/write-the-dags/context_manager_dag.md)

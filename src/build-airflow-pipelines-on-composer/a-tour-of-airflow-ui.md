@@ -1,4 +1,4 @@
-# A tour of Airflow UI
+# A tour of the Airflow UI
 
 The Airflow UI makes it easy to monitor and troubleshoot your data pipelines. It can also be helpful to manage Airflow cluster, and you can view and set up Airflow's:
 - Variables
@@ -8,7 +8,7 @@ The Airflow UI makes it easy to monitor and troubleshoot your data pipelines. It
 - Pools
 - XComs
 
-Let's take a tour of Airflow UI!
+Let's take a tour of the Airflow UI!
 
 ## DAGs view
 The default page of Airflow UI is the DAGs view. It lists all the DAGs that are available on this Airflow instance. You can see exactly how many tasks succeeded, failed, and are currently running at a glance.
