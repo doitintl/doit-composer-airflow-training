@@ -1,8 +1,10 @@
 #! /bin/bash
 
+# Variables to set
+PROJECT_ID=$(gcloud config get-value project)
+#echo "Setting default GCP project to ${PROJECT_ID}"
+#gcloud config set project ${PROJECT_ID}
 COMPOSER_SERVICE_ACCOUNT_NAME="composer-training"
-echo "Setting default GCP project to ${PROJECT_ID}"
-gcloud config set project ${PROJECT_ID}
 
 echo "Creating a service account for Composer environment to use"
 gcloud iam service-accounts create ${COMPOSER_SERVICE_ACCOUNT_NAME} \
@@ -29,7 +31,7 @@ gcloud projects add-iam-policy-binding ${PROJECT_ID} \
 echo "Enabling Composer API, this will take a few minutes..."
 gcloud services enable composer.googleapis.com
 
-echo "Creating Cloud Composer, this will take ~25 minutes from Google document..."
+echo "Creating Cloud Composer, this will take ~25 minutes..."
 gcloud composer environments create composer-training \
     --location us-central1 \
     --node-count 3 \

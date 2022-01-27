@@ -2,22 +2,18 @@
 
 Cloud Composer can be deployed via Console, gcloud cli, API, and Terraform. You can find the detailed instructions from Google's [document](https://cloud.google.com/composer/docs/how-to/managing/creating).
 
-In this tutorial, we will create a public IP Composer 1(because Composer 2 just becomes General Available.) Airflow 2.x environment using **gcloud** cli.
+In this tutorial, we will create a public IP Composer 1 (Composer 2 only recently became Generally Available) using an Airflow 2.x environment with **gcloud**.
 
-_Below bash script can be found at: `code/deploy-composer.sh`_
+_The bash script below can be found at: `code/deploy-composer.sh`_
 ```bash
 {{#include ../../code/deploy-composer.sh}}
 ```
 
-Below is an example of running it in my sandbox project named `derrick-sandbox`:
-```bash
-PROJECT_ID=derrick-sandbox bash code/deploy-composer.sh
-```
-
 After running the deployment scripts, verify:
-1. from [IAM](https://console.cloud.google.com/iam-admin) UI, a service account named `composer-training@${PROJECT_ID}.iam.gserviceaccount.com` has been created, and it has Cloud Storage and BigQuery Admin roles.
+1. From [IAM](https://console.cloud.google.com/iam-admin) UI, a service account named `composer-training@${PROJECT_ID}.iam.gserviceaccount.com` has been created, and it has Cloud Storage and BigQuery Admin roles.
 ![composer service account](composer-service-account.png)
-2. from [Composer](https://console.cloud.google.com/composer) UI that a Composer environment named `composer-training` has been created.
+2. From [Composer](https://console.cloud.google.com/composer) UI that a Composer environment named `composer-training` has been created.
 ![composer environment](composer-environment.png)
-3. after clicking the link of Airflow webserver, Airflow UI is shown. Note that the Composer version we just deployed uses Airflow 2. It might look [slightly different](https://airflow.apache.org/docs/apache-airflow/1.10.15/ui.html) if you deployed an Airflow 1.x version.
+
+Lastly, click on the Airflow webserver to open the Airflow UI. Note that the Composer 1 environment we just deployed uses Airflow 2 - the UI might look [slightly different](https://airflow.apache.org/docs/apache-airflow/1.10.15/ui.html) if you deployed an Airflow 1.x version on Composer 1.
 ![airflow webserver](airflow-webserver.png)
