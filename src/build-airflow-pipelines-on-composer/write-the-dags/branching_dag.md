@@ -1,6 +1,6 @@
 # Branching DAG
 
-When designing data pipelines, there may be use cases that require more complex task flows than "Task A > Task B > Task C". For example, there is a use case where different tasks need to be chosen to execute based on the results of an upstream task. We call this `branching` in Airflow, and it uses a particular Operator `BranchPythonOperator` to handle this use case.
+When designing data pipelines, there may be use cases that require more complex task flows than "Task A > Task B > Task C". For example, let's say that there is a use case where different tasks need to be chosen to execute based on the results of an upstream task. We call this `branching` in Airflow, and it uses a particular Operator `BranchPythonOperator` to handle this use case.
 
 `BranchPythonOperator` takes a Python function as an input. The function must return a list of task IDs that the DAG should proceed with based on some logic.
 

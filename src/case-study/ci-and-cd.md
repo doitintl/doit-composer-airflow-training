@@ -1,6 +1,6 @@
 # CI and CD
 
-At this point, we have the DAG and plugins ready and tested. What's next? Of course, you can upload them manually to Composer and have a working environment. However, in a proper Airflow project, we should have CI(continuous integration) and CD(continuous deployment) built up so that the development and operation activities can be smoother.
+At this point, we have the DAG and plugins ready and tested. What's next? Of course, you can upload them manually to Composer and have a working environment. However, in a proper Airflow project, we should have CI (continuous integration) and CD (continuous deployment) so that the development and operation activities can be smoother.
 
 ## CI
 Typical CI tasks in Airflow pipelines include:

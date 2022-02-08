@@ -18,6 +18,7 @@ From Airflow UI, there is a tab next to `Log` called XCom that shows XCom values
 ![xcoms push](airflow-xcoms-push.png)
 
 Let's check the `pull_task`. Yes, the value was received!
+
 ![xcoms pull](airflow-xcoms-pull.png)
 
 XCom values are stored in Airflow database and are shown on UI or logs. It is important not to store sensitive information and large data in them.

@@ -4,7 +4,6 @@ import random
 from airflow.models import DAG
 from airflow.operators.dummy import DummyOperator
 from airflow.operators.python import BranchPythonOperator
-from airflow.utils.dates import days_ago
 
 with DAG(
     dag_id="5_braching_dag",

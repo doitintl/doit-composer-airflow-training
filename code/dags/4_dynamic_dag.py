@@ -24,5 +24,5 @@ with DAG(
     d3 = DummyOperator(task_id="finish_dag")
 
     for i in sql_file_names:
-        d2 = DummyOperator(task_id="export_data_for_{0}".format(i))
+        d2 = DummyOperator(task_id=f"export_data_for_{i}")
         d1 >> d2 >> d3

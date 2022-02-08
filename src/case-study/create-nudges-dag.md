@@ -5,11 +5,14 @@ When designing a DAG, we often start with critical tasks such as loading the dat
 
 To generate the nudges for the customers, we can load the daily exported CSV files to three tables in BigQuery. After that, we can run a SQL query that joins the three tables, create the nudge information, and store the results in another table.
 The DAG looks like this:
+
 ![case-study-dag-1](case-study-dag-1.png)
 
-As the CSV files are on GCS and we need to load them to BigQuery, we need an Operator that can do GCS to BigQuery. Because building a custom Operator, GCS to BigQuery is a pretty generic job, let's search in [Astronomer Registry](https://registry.astronomer.io/) to see if Airflow has it in the built-in libraries.
+As the CSV files are on GCS and we need to load them to BigQuery, we need an Operator that can do GCS to BigQuery. Because building a custom Operator, GCS to BigQuery is a pretty generic job, let's search in [Astronomer Registry](https://registry.astronomer.io/) to see if Airflow has it in the built-in libraries:
+
 ![GCS-to-BQ-search](GCS-to-BQ-search.png)
-Yay, there it is! From it's [document](https://registry.astronomer.io/providers/google/modules/gcstobigqueryoperator/#example-dags), let's create our three data load tasks:
+
+Yay, there it is! From it's [documentation](https://registry.astronomer.io/providers/google/modules/gcstobigqueryoperator/#example-dags), let's create our three data load tasks:
 
 `code/dags/9_generate_nudges_dag.py`
 ```python

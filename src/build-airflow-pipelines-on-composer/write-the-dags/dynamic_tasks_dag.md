@@ -1,10 +1,8 @@
 # Dynamic tasks DAG
 
-As mentioned before, in Airflow, a DAG is defined by Python code. Tthere is no need for it to be purely declarative; you are free to use loops, functions, and more to define your DAG.
+As mentioned before, in Airflow, a DAG is defined by Python code. There is no need for it to be purely declarative; you are free to use loops, functions, and more to define your DAG.
 
-For example, there is a requirement to create a data pipeline to export data from tables in a database. The number of tables that need to export data is dynamic - let's assume new tables can be added anytime.
-
-Let's design it together.
+For example, let's say that there is a requirement to create a data pipeline to export data from tables in a database. Since new tables can be added at any time, the number of tables that we need to export data from is dynamic.
 
 Firstly, we save and upload a few SQL queries in the Cloud Storage bucket.
 
