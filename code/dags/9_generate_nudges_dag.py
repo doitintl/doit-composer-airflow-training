@@ -27,6 +27,7 @@ inner join `{PROJECT_ID}.analytics.items` i on i.item_id = act.item_id"""
 
 
 def branch_func(ti):
+    # ti means Task Instance here. It is used to retrieve Xcom value
     xcom_return_value = ti.xcom_pull(task_ids="get_latest_run_date", key="return_value")
     log.info(f"Xcom_return_value: {xcom_return_value}")
     if xcom_return_value:

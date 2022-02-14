@@ -1,5 +1,5 @@
 from datetime import datetime
-import random
+import time
 
 from airflow.models import DAG
 from airflow.operators.dummy import DummyOperator
@@ -13,12 +13,16 @@ with DAG(
 ) as dag:
     get_source = DummyOperator(task_id="get_source")
 
-    options = ["type_a_transform", "type_b_transform"]
+    def branch_func():
+        if int(time.time()) % 2 == 0:
+            return "even_number_transform"
+        else:
+            return "odd_number_transform"
 
     branch_check = BranchPythonOperator(
-        task_id="branch_check", python_callable=lambda: random.choice(options)
+        task_id="branch_check", python_callable=branch_func
     )
-    type_a = DummyOperator(task_id="type_a_transform")
-    type_b = DummyOperator(task_id="type_b_transform")
+    even_number_transform = DummyOperator(task_id="even_number_transform")
+    odd_number_transform = DummyOperator(task_id="odd_number_transform")
 
-    get_source >> branch_check >> [type_a, type_b]
+    get_source >> branch_check >> [even_number_transform, odd_number_transform]

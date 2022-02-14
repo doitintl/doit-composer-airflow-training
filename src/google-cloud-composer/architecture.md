@@ -19,8 +19,10 @@ A Cloud Composer environment contains multiple components, below are some of the
 - Airflow database hosted on CloudSQL
   - It stores all the information of Airflow, including DAGs, task information, configs, etc
 - Airflow buckets
-  - It contains all the custom code, including DAGs, plugins, and other resources
-  - Behind the scene, Composer uses [gcsfuse](https://github.com/GoogleCloudPlatform/gcsfuse) to sync all the content to Airflow workers and webserver
+  - When you create an environment, Cloud Composer creates a Cloud Storage bucket and associates the bucket with your Composer environment.
+  - You can store custom code in the Cloud Storage bucket, including DAGs, plugins, and other resources.
+  - Behind the scene, Composer uses [gcsfuse](https://github.com/GoogleCloudPlatform/gcsfuse) to sync all the content to Airflow workers and webserver.
+  - You can find a Google [document](https://cloud.google.com/composer/docs/concepts/cloud-storage#folders_in_the_bucket) that shows the mapping list between the folders in the bucket to Airflow folders.
 - Redis queue
   - It holds a queue of individual tasks from your DAGs. Airflow schedulers fill the queue; Airflow workers take their tasks from it
 
