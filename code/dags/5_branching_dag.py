@@ -8,6 +8,7 @@ from airflow.operators.python import BranchPythonOperator
 with DAG(
     dag_id="5_braching_dag",
     start_date=datetime(2021, 12, 1),
+    catchup=False,
     schedule_interval="@daily",
     tags=["custom"],
 ) as dag:

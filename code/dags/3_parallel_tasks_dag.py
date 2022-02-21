@@ -19,6 +19,7 @@ with DAG(
     description="parallel tasks Dag",
     schedule_interval="0 12 * * *",
     start_date=datetime(2021, 12, 1),
+    catchup=False,
     tags=["custom"],
 ) as dag:
 

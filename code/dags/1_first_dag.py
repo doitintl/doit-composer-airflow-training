@@ -20,6 +20,7 @@ dag = DAG(
     description="first dag",
     schedule_interval="0 3 * * *",
     start_date=datetime(2022, 2, 17),
+    catchup=False,
     tags=["custom"],
 )
 

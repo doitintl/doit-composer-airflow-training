@@ -4,8 +4,12 @@ from airflow.operators.dummy_operator import DummyOperator
 from operators.hello_operator import HelloOperator
 
 
-dag = DAG('8_custom_operator_dag', schedule_interval='0 12 * * *',
-            start_date=datetime(2021, 12, 1), tags=["custom"]
+dag = DAG(
+    '8_custom_operator_dag',
+    schedule_interval='0 12 * * *',
+    start_date=datetime(2021, 12, 1),
+    catchup=False,
+    tags=["custom"]
 )
 
 start = DummyOperator(

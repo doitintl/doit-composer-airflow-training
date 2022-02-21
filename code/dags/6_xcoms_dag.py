@@ -3,10 +3,11 @@ from airflow.models import DAG
 from airflow.operators.python_operator import PythonOperator
 
 DAG = DAG(
-  dag_id='6_xcoms_dag',
-  start_date=datetime.now(),
-  schedule_interval='@once',
-  tags=['custom']
+    dag_id='6_xcoms_dag',
+    start_date=datetime.now(),
+    catchup=False,
+    schedule_interval='@once',
+    tags=['custom']
 )
 
 def push_function(**kwargs):

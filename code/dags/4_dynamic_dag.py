@@ -18,6 +18,7 @@ with DAG(
     schedule_interval="0 12 * * *",
     template_searchpath=sql_folder,
     start_date=datetime(2021, 12, 1),
+    catchup=False,
     tags=["custom"],
 ) as dag:
     d1 = DummyOperator(task_id="kick_off_dag")
