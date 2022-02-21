@@ -19,7 +19,7 @@ dag = DAG(
     "1_first_dag",
     description="first dag",
     schedule_interval="0 3 * * *",
-    start_date=datetime(2021, 12, 1),
+    start_date=datetime(2022, 2, 17),
     tags=["custom"],
 )
 
@@ -30,6 +30,12 @@ start = BashOperator(
     dag=dag,
 )
 
+check_ip = BashOperator(
+    task_id="check_ip",
+    bash_command='curl checkip.amazonaws.com',
+    dag=dag,
+)
+
 end = BashOperator(
     task_id="end",
     bash_command='echo "stop"',
@@ -37,4 +43,4 @@ end = BashOperator(
 )
 
 # Step-5. Define task sequence and dependencies
-start >> end
+start >> check_ip >> end
