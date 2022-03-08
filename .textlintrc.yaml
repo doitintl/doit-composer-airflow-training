@@ -1,0 +1,56 @@
+filters:
+  # https://github.com/textlint/textlint-filter-rule-allowlist
+  # allowlist:
+  # allow: [mdBook] -> this didn't work for en-capitalization
+  # https://github.com/textlint/textlint-filter-rule-comments
+  comments: true
+rules:
+  doubled-spaces: true
+  en-capitalization:
+    true
+    # allowWords: [mdBook] -> this didn't work for mdBook
+    # this
+  en-max-word-count:
+    max: 40
+  # max-comma:
+  #   max: 4 -> this should be covered by max-word-count rule
+  no-empty-section: true
+  stop-words: true
+  terminology:
+    true
+    # terms:
+    #   - website -> this didn't work
+  unexpanded-acronym:
+    min_acronym_len: 3
+    ignore_acronyms:
+      - API
+      - CSV
+      - JSON
+      - SQL
+      - TODO
+      - URL
+      - DAG
+      - URI
+      - REST
+  alex:
+    allow:
+      - colors
+      - execute
+      - executed
+      - executes
+      - failed
+      - failure
+      - failures
+      - hook
+      - hooks
+      - host-hostess
+      - invalid
+      - period
+      - special
+  rousseau:
+    showLevels:
+      # - suggestion
+      # - warning
+      - error
+  # write-good: true
+  '@textlint-rule/proselint': true

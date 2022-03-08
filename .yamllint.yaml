@@ -1,0 +1,6 @@
+rules:
+  document-start: disable
+  octal-values: enable
+  quoted-strings:
+    required: only-when-needed
+ignore: Google

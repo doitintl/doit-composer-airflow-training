@@ -43,5 +43,5 @@ with DAG(
         bash_command="echo T4",
     )
 
-    #t1 >> t2 >> t3 >> t4
+    # t1 >> t2 >> t3 >> t4
     [t1, t2, t3] >> t4

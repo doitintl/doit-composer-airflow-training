@@ -1,0 +1,4 @@
+# Files to ignore when searching for text files
+.git
+*.md5sum
+*.png

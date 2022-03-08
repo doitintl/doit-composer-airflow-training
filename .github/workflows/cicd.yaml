@@ -2,9 +2,9 @@ name: CICD
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
@@ -16,8 +16,8 @@ jobs:
         run: |
           wget -qO- https://github.com/rust-lang/mdBook/releases/download/v0.4.14/mdbook-v0.4.14-x86_64-unknown-linux-gnu.tar.gz | tar xzf -
           sudo mv mdbook /bin/mdbook
-      - name: Build and test
-        run: mdbook build && mdbook test
+      - name: Lint, build, and test
+        run: make lint && make build & make test
       - uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
           branch: gh-pages # The branch the action should deploy to.

@@ -1,4 +1,4 @@
-# Step-1: Import Python modules 
+# Step-1: Import Python modules
 from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
@@ -33,7 +33,7 @@ start = BashOperator(
 
 check_ip = BashOperator(
     task_id="check_ip",
-    bash_command='curl checkip.amazonaws.com',
+    bash_command="curl checkip.amazonaws.com",
     dag=dag,
 )
 

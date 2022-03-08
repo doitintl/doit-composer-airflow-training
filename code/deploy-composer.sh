@@ -7,7 +7,7 @@ PROJECT_ID=$(gcloud config get-value project)
 COMPOSER_SERVICE_ACCOUNT_NAME="composer-training"
 
 echo "Creating a service account for Composer environment to use"
-gcloud iam service-accounts create ${COMPOSER_SERVICE_ACCOUNT_NAME} \
+gcloud iam service-accounts create "${COMPOSER_SERVICE_ACCOUNT_NAME}" \
     --description="composer training service account" \
     --display-name="composer training service account"
 
@@ -16,15 +16,15 @@ echo "Created service account: ${COMPOSER_SERVICE_ACCOUNT_ID}"
 
 # https://cloud.google.com/composer/docs/how-to/access-control#service-account
 echo "Adding composer.worker roles to the service account"
-gcloud projects add-iam-policy-binding ${PROJECT_ID} \
+gcloud projects add-iam-policy-binding "${PROJECT_ID}" \
     --member="serviceAccount:${COMPOSER_SERVICE_ACCOUNT_ID}" \
     --role="roles/composer.worker"
 
 echo "Adding GCS and BigQuery admin roles for the service account to run this tutorial"
-gcloud projects add-iam-policy-binding ${PROJECT_ID} \
+gcloud projects add-iam-policy-binding "${PROJECT_ID}" \
     --member="serviceAccount:${COMPOSER_SERVICE_ACCOUNT_ID}" \
     --role="roles/storage.admin"
-gcloud projects add-iam-policy-binding ${PROJECT_ID} \
+gcloud projects add-iam-policy-binding "${PROJECT_ID}" \
     --member="serviceAccount:${COMPOSER_SERVICE_ACCOUNT_ID}" \
     --role="roles/bigquery.admin"
 
@@ -41,5 +41,5 @@ gcloud composer environments create composer-training \
     --cloud-sql-machine-type db-n1-standard-2 \
     --web-server-machine-type composer-n1-webserver-2 \
     --image-version "composer-1.17.5-airflow-2.1.4" \
-    --service-account ${COMPOSER_SERVICE_ACCOUNT_ID} \
+    --service-account "${COMPOSER_SERVICE_ACCOUNT_ID}" \
     --zone us-central1-c
