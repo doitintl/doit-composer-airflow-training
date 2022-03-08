@@ -38,7 +38,7 @@
 #
 # Feel free to modify this file to suit your needs.
 ---
-version: '3'
+version: 3
 x-airflow-common: &airflow-common
   # In order to add custom dependencies or upgrade provider packages you can use your extended image.
   # Comment the image line, place your Dockerfile in the directory where you placed the docker-compose.yaml
@@ -51,15 +51,15 @@ x-airflow-common: &airflow-common
     AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres/airflow
     AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
     AIRFLOW__CORE__FERNET_KEY: ''
-    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
-    AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
-    AIRFLOW__API__AUTH_BACKEND: 'airflow.api.auth.backend.basic_auth'
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: true
+    AIRFLOW__CORE__LOAD_EXAMPLES: true
+    AIRFLOW__API__AUTH_BACKEND: airflow.api.auth.backend.basic_auth
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
   volumes:
     - ./dags:/opt/airflow/dags
     - ./logs:/opt/airflow/logs
     - ./plugins:/opt/airflow/plugins
-  user: '${AIRFLOW_UID:-50000}:0'
+  user: ${AIRFLOW_UID:-50000}:0
   depends_on: &airflow-common-depends-on
     redis:
       condition: service_healthy
@@ -78,7 +78,7 @@ services:
     volumes:
       - postgres-db-volume:/var/lib/postgresql/data
     healthcheck:
-      test: ['CMD', 'pg_isready', '-U', 'airflow']
+      test: [CMD, pg_isready, -U, airflow]
       interval: 5s
       retries: 5
     restart: always
@@ -88,7 +88,7 @@ services:
     expose:
       - 6379
     healthcheck:
-      test: ['CMD', 'redis-cli', 'ping']
+      test: [CMD, redis-cli, ping]
       interval: 5s
       timeout: 30s
       retries: 50
@@ -100,7 +100,7 @@ services:
     ports:
       - 8080:8080
     healthcheck:
-      test: ['CMD', 'curl', '--fail', 'http://localhost:8080/health']
+      test: [CMD, curl, --fail, http://localhost:8080/health]
       interval: 10s
       timeout: 10s
       retries: 5
@@ -114,7 +114,9 @@ services:
     <<: *airflow-common
     command: scheduler
     healthcheck:
-      test: ['CMD-SHELL', 'airflow jobs check --job-type SchedulerJob --hostname "$${HOSTNAME}"']
+      test:
+        - CMD-SHELL
+        - airflow jobs check --job-type SchedulerJob --hostname "$${HOSTNAME}"
       interval: 10s
       timeout: 10s
       retries: 5
@@ -129,8 +131,8 @@ services:
     command: celery worker
     healthcheck:
       test:
-        - 'CMD-SHELL'
-        - 'celery --app airflow.executors.celery_executor.app inspect ping -d "celery@$${HOSTNAME}"'
+        - CMD-SHELL
+        - celery --app airflow.executors.celery_executor.app inspect ping -d "celery@$${HOSTNAME}"
       interval: 10s
       timeout: 10s
       retries: 5
@@ -138,7 +140,7 @@ services:
       <<: *airflow-common-env
       # Required to handle warm shutdown of the celery workers properly
       # See https://airflow.apache.org/docs/docker-stack/entrypoint.html#signal-propagation
-      DUMB_INIT_SETSID: '0'
+      DUMB_INIT_SETSID: 0
     restart: always
     depends_on:
       <<: *airflow-common-depends-on
@@ -149,7 +151,9 @@ services:
     <<: *airflow-common
     command: triggerer
     healthcheck:
-      test: ['CMD-SHELL', 'airflow jobs check --job-type TriggererJob --hostname "$${HOSTNAME}"']
+      test:
+        - CMD-SHELL
+        - airflow jobs check --job-type TriggererJob --hostname "$${HOSTNAME}"'
       interval: 10s
       timeout: 10s
       retries: 5
@@ -228,11 +232,11 @@ services:
     # yamllint enable rule:line-length
     environment:
       <<: *airflow-common-env
-      _AIRFLOW_DB_UPGRADE: 'true'
-      _AIRFLOW_WWW_USER_CREATE: 'true'
+      _AIRFLOW_DB_UPGRADE: true
+      _AIRFLOW_WWW_USER_CREATE: true
       _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
       _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
-    user: '0:0'
+    user: 0:0
     volumes:
       - .:/sources
 
@@ -255,7 +259,7 @@ services:
     ports:
       - 5555:5555
     healthcheck:
-      test: ['CMD', 'curl', '--fail', 'http://localhost:5555/']
+      test: [CMD, curl, --fail, http://localhost:5555/]
       interval: 10s
       timeout: 10s
       retries: 5

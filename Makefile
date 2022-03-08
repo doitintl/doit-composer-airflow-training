@@ -142,3 +142,16 @@ lint: black
 black:
 	$(call print-target)
 	$(BLACK)
+
+# yamllint
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# https://github.com/adrienverge/yamllint
+
+YAMLLINT = yamllint --config-file .yamllint.yaml .
+
+lint: yamllint
+.PHONY: yamllint
+yamllint:
+	$(call print-target)
+	$(YAMLLINT)
