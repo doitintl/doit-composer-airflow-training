@@ -213,3 +213,17 @@ lint: misspell
 misspell:
 	$(call print-target)
 	$(MISSPELL)
+
+# proselintjs
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# https://github.com/sapegin/proselint
+
+PROSELINTJS := $(BIN_DIR)/find.sh | xargs -0 \
+	xargs -0 proselintjs --config .proselintrc.json
+
+lint: proselintjs
+.PHONY: proselintjs
+proselintjs:
+	$(call print-target)
+	$(PROSELINTJS)
