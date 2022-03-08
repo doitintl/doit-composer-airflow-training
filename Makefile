@@ -255,3 +255,14 @@ lint: markdown-link-check
 markdown-link-check:
 	$(call print-target)
 	$(MARKDOWN_LINK_CHECK)
+
+# optipng
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+OPTIPNG := $(BIN_DIR)/optipng.sh --dry-run
+
+check: optipng
+.PHONY: optipng
+optipng:
+	$(call print-target)
+	$(OPTIPNG)

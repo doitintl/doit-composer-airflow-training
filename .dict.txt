@@ -47,6 +47,7 @@ mdbook
 mkdir
 mktemp
 numfmt
+optipng
 posix
 proto
 psycopg
