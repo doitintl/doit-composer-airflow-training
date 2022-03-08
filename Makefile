@@ -241,3 +241,17 @@ lint: textlint
 textlint:
 	$(call print-target)
 	$(TEXTLINT)
+
+# markdown-link-check
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# https://github.com/tcort/markdown-link-check
+
+MARKDOWN_LINK_CHECK = $(BIN_DIR)/find.sh -name '*.md' | xargs -0 \
+	markdown-link-check --config .markdown-link-check.json --quiet --retry
+
+lint: markdown-link-check
+.PHONY: markdown-link-check
+markdown-link-check:
+	$(call print-target)
+	$(MARKDOWN_LINK_CHECK)
