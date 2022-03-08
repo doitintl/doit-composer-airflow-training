@@ -242,6 +242,28 @@ textlint:
 	$(call print-target)
 	$(TEXTLINT)
 
+# vale
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# https://github.com/errata-ai/vale
+
+VALE_STYLES_DIR = .vale/styles
+GOOGLE_ZIP = Google-0.3.3.zip
+
+VALE := ./bin/find.sh | xargs -0 \
+	vale \
+		--config .vale.ini \
+		--minAlertLevel warning \
+		--output=.vale/templates/cli.tmpl \
+		--no-wrap
+
+check: vale
+.PHONY: vale
+vale:
+	$(call print-target)
+	cd $(VALE_STYLES_DIR) && unzip $(GOOGLE_ZIP)
+	$(VALE)
+
 # markdown-link-check
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

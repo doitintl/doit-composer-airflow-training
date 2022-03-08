@@ -1,5 +1,6 @@
 __pycache__
 .pytest_cache
+.vale/styles/Google
 .venv
 .vscode/settings.json
 *.log
