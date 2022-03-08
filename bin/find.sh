@@ -14,4 +14,4 @@ find . -type f \
     -not -exec git check-ignore --quiet {} \; \
     -exec grep -qI . {} \; \
     "${@}" \
-    -print | sort -n
+    -print0 | sort -zn

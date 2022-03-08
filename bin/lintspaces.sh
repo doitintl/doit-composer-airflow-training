@@ -9,12 +9,12 @@
 
 run_lintspaces() {
     max_newlines="${1}"
-    tr '\n' '\0' </dev/stdin |
-        xargs -0 lintspaces \
-            --maxnewlines "${max_newlines}" \
-            --editorconfig .editorconfig \
-            --guessindentation \
-            --matchdotfiles
+    xargs -0 lintspaces \
+        --maxnewlines "${max_newlines}" \
+        --editorconfig .editorconfig \
+        --guessindentation \
+        --matchdotfiles \
+        </dev/stdin
 }
 
 # Python files

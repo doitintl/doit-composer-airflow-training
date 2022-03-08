@@ -155,3 +155,14 @@ lint: yamllint
 yamllint:
 	$(call print-target)
 	$(YAMLLINT)
+
+# shellcheck
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+SHELLCHECK := $(BIN_DIR)/find.sh -name '*.sh' | xargs -0 shellcheck
+
+lint: shellcheck
+.PHONY: shellcheck
+shellcheck:
+	$(call print-target)
+	$(SHELLCHECK)
