@@ -166,3 +166,16 @@ lint: shellcheck
 shellcheck:
 	$(call print-target)
 	$(SHELLCHECK)
+
+# shfmt
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# https://github.com/mvdan/sh
+
+SHFMT = shfmt -d -p -i 4 .
+
+lint: shfmt
+.PHONY: shfmt
+shfmt:
+	$(call print-target)
+	$(SHFMT)

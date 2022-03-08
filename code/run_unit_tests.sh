@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/sh -e
 
-DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+DIR="$(cd "$(dirname "${0}")" >/dev/null 2>&1 && pwd)"
 
 find . -name '*.pyc' -delete
 
-PYTHONPATH=${DIR}/plugins python -m pytest -s "$DIR/tests"
+PYTHONPATH=${DIR}/plugins python -m pytest -s "${DIR}/tests"
