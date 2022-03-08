@@ -20,5 +20,5 @@
     "sandcastle.whitespace",
     "redhat.vscode-yaml",
     "tamasfe.even-better-toml"
-]
+  ]
 }

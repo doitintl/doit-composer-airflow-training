@@ -116,3 +116,16 @@ lint: lintspaces
 lintspaces:
 	$(call print-target)
 	$(LINTSPACES)
+
+# prettier
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# https://github.com/prettier/prettier
+
+PRETTIER = prettier --check --ignore-unknown .
+
+lint: prettier
+.PHONY: prettier
+prettier:
+	$(call print-target)
+	$(PRETTIER)

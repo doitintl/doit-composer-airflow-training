@@ -1,0 +1,5 @@
+.venv
+*.csv
+*.html
+*.md
+book
