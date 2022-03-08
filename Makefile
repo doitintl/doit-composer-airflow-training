@@ -190,3 +190,15 @@ lint: markdownlint
 markdownlint:
 	$(call print-target)
 	$(MARKDOWNLINT)
+
+# cspell
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+CSPELL := $(BIN_DIR)/find.sh | xargs -0 \
+	cspell --no-progress --no-summary --config .cspell.json
+
+lint: cspell
+.PHONY: cspell
+cspell:
+	$(call print-target)
+	$(CSPELL)

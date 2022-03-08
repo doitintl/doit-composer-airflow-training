@@ -1,4 +1,5 @@
 {
+  // cspell:disable
   "recommendations": [
     "streetsidesoftware.code-spell-checker",
     "github.codespaces",

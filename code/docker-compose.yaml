@@ -94,9 +94,9 @@ services:
       retries: 50
     restart: always
 
-  airflow-webserver:
+  airflow-web-server:
     <<: *airflow-common
-    command: webserver
+    command: web-server
     ports:
       - 8080:8080
     healthcheck:

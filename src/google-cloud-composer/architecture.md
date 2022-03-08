@@ -36,7 +36,7 @@ However, regardless of which environment setup and old and new Composer versions
 
 ## Different Composer setups
 
-Below are the different steups of Composer 1 and 2
+Below are the different setups of Composer 1 and 2
 
 ### Composer 1
 

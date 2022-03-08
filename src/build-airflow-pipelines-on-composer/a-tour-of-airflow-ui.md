@@ -101,7 +101,7 @@ On the connection view page, connections information is shown and can be edited:
 
 ![connection view](https://airflow.apache.org/docs/apache-airflow/stable/_images/connections.png)
 
-In the [last chapter](deploy-a-composer-enrionment.md), we deployed a Cloud Composer environment with a service account. In the Airflow pipelines in Composer, by default, they will use this service account to authorize all the Google Cloud API calls. This saves time setting up Google Cloud connection on the Airflow configuration view page.
+In the [last chapter](deploy-a-composer-environment.md), we deployed a Cloud Composer environment with a service account. In the Airflow pipelines in Composer, by default, they will use this service account to authorize all the Google Cloud API calls. This saves time setting up Google Cloud connection on the Airflow configuration view page.
 
 ### XComs view
 

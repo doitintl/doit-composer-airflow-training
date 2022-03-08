@@ -1,0 +1,9 @@
+{
+  "version": "0.2",
+  "language": "en-US",
+  "caseSensitive": false,
+  "allowCompoundWords": false,
+  "minWordLength": 2,
+  "dictionaries": ["custom"],
+  "dictionaryDefinitions": [{ "name": "custom", "path": ".dict.txt" }]
+}
