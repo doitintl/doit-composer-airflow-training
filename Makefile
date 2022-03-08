@@ -11,6 +11,8 @@ LC_ALL = C
 BOLD = [1m
 RESET = [0m
 
+BIN_DIR = ./bin
+
 # $(call print-target)
 define print-target
 @ printf "\e$(BOLD)make %s\e$(RESET)\n" "$$(echo $@ | sed 's,.stamp,,')"
@@ -103,3 +105,14 @@ lint: ec
 ec:
 	$(call print-target)
 	$(EC)
+
+# lintspaces
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+LINTSPACES := $(BIN_DIR)/lintspaces.sh
+
+lint: lintspaces
+.PHONY: lintspaces
+lintspaces:
+	$(call print-target)
+	$(LINTSPACES)

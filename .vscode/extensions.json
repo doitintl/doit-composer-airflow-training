@@ -1,24 +1,24 @@
 {
-    "recommendations": [
-        "streetsidesoftware.code-spell-checker",
-        "github.codespaces",
-        "david-reis.crashacters",
-        "editorconfig.editorconfig",
-        "bierner.github-markdown-preview",
-        "codezombiech.gitignore",
-        "nhoizey.gremlins",
-        "fnando.linter",
-        "yzhang.markdown-all-in-one",
-        "davidanson.vscode-markdownlint",
-        "viktorzetterstrom.non-breaking-space-highlighter",
-        "esbenp.prettier-vscode",
-        "foxundermoon.shell-format",
-        "timonwong.shellcheck",
-        "tetradresearch.vscode-h2o",
-        "shardulm94.trailing-spaces",
-        "errata-ai.vale-server",
-        "sandcastle.whitespace",
-        "redhat.vscode-yaml",
-        "tamasfe.even-better-toml"
-    ]
+  "recommendations": [
+    "streetsidesoftware.code-spell-checker",
+    "github.codespaces",
+    "david-reis.crashacters",
+    "editorconfig.editorconfig",
+    "bierner.github-markdown-preview",
+    "codezombiech.gitignore",
+    "nhoizey.gremlins",
+    "fnando.linter",
+    "yzhang.markdown-all-in-one",
+    "davidanson.vscode-markdownlint",
+    "viktorzetterstrom.non-breaking-space-highlighter",
+    "esbenp.prettier-vscode",
+    "foxundermoon.shell-format",
+    "timonwong.shellcheck",
+    "tetradresearch.vscode-h2o",
+    "shardulm94.trailing-spaces",
+    "errata-ai.vale-server",
+    "sandcastle.whitespace",
+    "redhat.vscode-yaml",
+    "tamasfe.even-better-toml"
+]
 }

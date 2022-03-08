@@ -1,6 +1,6 @@
 {
-    "image": "ghcr.io/doitintl/docops/devcontainer:main",
-    "settings": {},
-    "extensions": [],
-    "remoteUser": "vscode"
+  "image": "ghcr.io/doitintl/docops/devcontainer:main",
+  "settings": {},
+  "extensions": [],
+  "remoteUser": "vscode"
 }

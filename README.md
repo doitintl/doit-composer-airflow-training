@@ -23,7 +23,6 @@ To run it locally:
 
 ![mdbook website](mdbook-website.png)
 
-
 ## Contribution
 
 If you'd like to get involved, either fixing a grammar mistake or adding a new chapter, please send a pull request!
