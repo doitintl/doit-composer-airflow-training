@@ -1,0 +1,8 @@
+extends: substitution
+message: Use '%s' instead of '%s'
+level: error
+ignorecase: true
+# TODO: Add more rules using words from the cSpell dictionary
+swap:
+  # Allow `doit-intl`, `doit.example.com`, and `DoiT's`
+  "DoiT[^-.']": DoiT

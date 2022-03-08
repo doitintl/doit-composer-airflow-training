@@ -8,7 +8,7 @@
   - [Version support and deprecation](google-cloud-composer/version-support-and-deprecation.md)
   - [Limitations](google-cloud-composer/limitations.md)
 - [Build Airflow pipelines on Composer](build-airflow-pipelines-on-composer/README.md)
-  - [Deploy a Composer environment](build-airflow-pipelines-on-composer/deploy-a-composer-enrionment.md)
+  - [Deploy a Composer environment](build-airflow-pipelines-on-composer/deploy-a-composer-environment.md)
   - [A tour of the Airflow UI](build-airflow-pipelines-on-composer/a-tour-of-airflow-ui.md)
   - [Write the DAGs](build-airflow-pipelines-on-composer/write-the-dags/README.md)
     - [First DAG](build-airflow-pipelines-on-composer/write-the-dags/first_dag.md)
@@ -25,6 +25,7 @@
     - [CI and CD](case-study/ci-and-cd.md)
 - [Set up and run Airflow locally](set-up-and-run-airflow-locally.md)
 - [What's next?](what-next.md)
------------
+
+---
 
 [Contributors](misc/contributors.md)

@@ -1,8 +1,10 @@
-book
 __pycache__
 .pytest_cache
-logs
+.vale/styles/Google
 .venv
+.vscode/settings.json
 *.log
-latest
+book
 index.html
+latest
+logs

@@ -6,19 +6,20 @@ For example, let's say that there is a requirement to create a data pipeline to 
 
 Firstly, we save and upload a few SQL queries in the Cloud Storage bucket.
 
-![sql files](airflow-dynamic-dag-sql-files.png)
+![SQL files](airflow-dynamic-dag-sql-files.png)
 
-Then, we can create a DAG that uses a for loop to define some tasks. In this example, `DummyOperator` is used for demonstration purpose. As per name, `DummyOperator` does literally nothing. The tasks that use it are evaluated by the scheduler but never processed by the executor.
+Then, we can create a DAG that uses a for loop to define some tasks. In this example, `DummyOperator` is used for demonstration purpose. As per name, `DummyOperator` does nothing. The tasks that use it are evaluated by the scheduler but never processed by the executor.
 
-`code/dags/4_dynamic_dag.py`
+Create a file named `4_dynamic_dag.py` that contains the following code:
+
 ```python
 {{#include ../../../code/dags/4_dynamic_dag.py}}
 ```
 
-![dynamic dag](airflow-dynamic-dag.png)
+![Dynamic dag](airflow-dynamic-dag.png)
 
-Dynamic DAGs are useful. However, in general, it is recommended to try and keep the topology (the layout) of the DAG tasks relatively stable; dynamic DAGs are usually better used for dynamically loading configuration options or changing operator options.
+Dynamic DAGs are useful. However, try and keep the topology (the layout) of the DAG tasks relatively stable; dynamic DAGs are usually better used for dynamically loading configuration options or changing operator options.
 
-Remember that readability is also very important in designing Airflow DAGs.
+Remember that readability is also important in designing Airflow DAGs.
 
 Next, let's create a DAG to handle branching tasks.

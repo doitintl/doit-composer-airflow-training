@@ -1,0 +1,6 @@
+.vale/styles/Google
+.venv
+*.csv
+*.html
+*.md
+book
