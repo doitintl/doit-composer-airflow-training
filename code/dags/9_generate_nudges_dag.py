@@ -56,7 +56,7 @@ with DAG(
     check_run_date = BranchPythonOperator(
         task_id="check_run_date", python_callable=branch_func
     )
-    
+
     kick_off_run = DummyOperator(task_id="kick_off_run")
     finish_run = DummyOperator(task_id="finish_run")
 

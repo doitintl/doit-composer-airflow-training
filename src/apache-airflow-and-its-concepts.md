@@ -12,7 +12,7 @@ You can use Airflow to create workflows as [Directed Acyclic Graphs](https://en.
 
 ## Why Airflow is popular
 
-- You can define workflows as Python code, so they 
+- You can define workflows as Python code, so they
   - are more flexible
   - are testable
   - easy to reuse

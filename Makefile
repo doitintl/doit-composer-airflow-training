@@ -84,3 +84,22 @@ test:
 watch:
 	$(call print-target)
 	mdbook watch
+
+# Linting
+# =============================================================================
+
+.PHONY: lint # Run a suite of lint checks
+lint:
+
+# ec
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# https://github.com/editorconfig-checker/editorconfig-checker
+
+EC = ec
+
+lint: ec
+.PHONY: ec
+ec:
+	$(call print-target)
+	$(EC)

@@ -10,7 +10,7 @@ class BigQueryGetResultsOperator(BaseOperator):
     def __init__(self, query, *args, **kwargs):
         self.query = query
         super(BigQueryGetResultsOperator, self).__init__(*args, **kwargs)
-    
+
     def execute(self, context):
         bq = BigQueryHook(
             use_legacy_sql=False
@@ -25,6 +25,6 @@ class BigQueryGetResultsOperator(BaseOperator):
         results = []
         for item in query_results:
             results.append(item[0])
-        
+
         # return results will put the results into xcom as return value
         return results

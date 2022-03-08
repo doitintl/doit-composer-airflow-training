@@ -1,5 +1,5 @@
 # Write the DAGs
-In this chapter, we will learn how to write the DAGs. We will use some of the fundamental Airflow concepts we learned to create these pipelines. 
+In this chapter, we will learn how to write the DAGs. We will use some of the fundamental Airflow concepts we learned to create these pipelines.
 
 ## Basics of writing a DAG
 Airflow uses Python to define DAGs. A DAG file is nothing but a standard Python file.

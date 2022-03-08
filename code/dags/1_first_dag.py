@@ -1,4 +1,4 @@
-# Step-1: Import Python modules 
+# Step-1: Import Python modules
 from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.bash_operator import BashOperator

@@ -1,0 +1,30 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+max_line_length = 125
+trim_trailing_whitespace = true
+
+[*.yaml]
+max_line_length = 140
+
+[*.md]
+indent_size = off
+max_line_length = off
+
+[{*.sh,*.py}]
+indent_size = 4
+
+[Makefile]
+indent_size = 4
+indent_style = tab
+
+[.markdown-link-check.json]
+max_line_length = off
+
+[COMMIT_EDITMSG]
+max_line_length = 72

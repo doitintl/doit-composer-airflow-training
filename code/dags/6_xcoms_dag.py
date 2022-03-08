@@ -15,7 +15,7 @@ def push_function(**kwargs):
     return ls
 
 push_task = PythonOperator(
-    task_id='push_task', 
+    task_id='push_task',
     python_callable=push_function,
     provide_context=True,
     dag=DAG)
@@ -26,7 +26,7 @@ def pull_function(**kwargs):
     print(ls)
 
 pull_task = PythonOperator(
-    task_id='pull_task', 
+    task_id='pull_task',
     python_callable=pull_function,
     provide_context=True,
     dag=DAG)

@@ -4,7 +4,7 @@ In this section, we will talk about the architecture of Cloud Composer.
 ## Composer components
 A Cloud Composer environment contains multiple components, below are some of the important ones:
 - Airflow Webserver
-  -  It is a visual management interface powered by [Flask-AppBuilder](https://flask-appbuilder.readthedocs.io/) 
+  -  It is a visual management interface powered by [Flask-AppBuilder](https://flask-appbuilder.readthedocs.io/)
   -  It provides the ability to
      -  view status of DAGs and their status
      -  display logs from each DAG and worker
