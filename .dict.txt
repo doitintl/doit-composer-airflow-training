@@ -45,6 +45,7 @@ matchdotfiles
 maxnewlines
 mdbook
 mkdir
+mktemp
 numfmt
 posix
 proto

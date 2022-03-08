@@ -202,3 +202,14 @@ lint: cspell
 cspell:
 	$(call print-target)
 	$(CSPELL)
+
+# misspell
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+MISSPELL := $(BIN_DIR)/misspell.sh
+
+lint: misspell
+.PHONY: misspell
+misspell:
+	$(call print-target)
+	$(MISSPELL)
