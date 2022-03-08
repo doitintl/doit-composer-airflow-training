@@ -1,8 +1,9 @@
-book
 __pycache__
 .pytest_cache
-logs
 .venv
+.vscode/settings.json
 *.log
-latest
+book
 index.html
+latest
+logs
