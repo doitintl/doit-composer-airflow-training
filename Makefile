@@ -227,3 +227,17 @@ lint: proselintjs
 proselintjs:
 	$(call print-target)
 	$(PROSELINTJS)
+
+# textlint
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# https://github.com/textlint/textlint
+
+TEXTLINT := $(BIN_DIR)/find.sh -name '*.md' | xargs -0 \
+	xargs -0 textlint
+
+lint: textlint
+.PHONY: textlint
+textlint:
+	$(call print-target)
+	$(TEXTLINT)

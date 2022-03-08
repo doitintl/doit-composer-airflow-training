@@ -1,4 +1,41 @@
 plugins:
-  - plugin-name
-filters:
-rules":
+rules:
+  alex:
+    allow:
+      - colors
+      - execute
+      - executed
+      - executes
+      - failed
+      - failure
+      - failures
+      - hook
+      - hooks
+      - host-hostess
+      - invalid
+      - period
+      - special
+  doubled-spaces: true
+  en-capitalization: true
+  en-max-word-count:
+    max: 30
+  max-comma:
+    max: 4
+  no-empty-section: true
+  rousseau:
+    showLevels:
+      - suggestion
+      - warning
+      - error
+  stop-words: true
+  terminology: true
+  unexpanded-acronym:
+    min_acronym_len: 3
+    ignore_acronyms:
+      - API
+      - CSV
+      - JSON
+      - SQL
+      - TODO
+      - URL
+  write-good: true
