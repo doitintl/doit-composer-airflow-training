@@ -7,6 +7,7 @@ When designing data pipelines, there may be use cases that require more complex 
 To demonstrate branching, let's create a DAG that uses Python [random.choice](https://docs.python.org/3/library/random.html#random.choice) function to decide which type of dummy transform it will execute.
 
 `code/dags/5_branching_dag.py`
+
 ```python
 {{#include ../../../code/dags/5_branching_dag.py}}
 ```

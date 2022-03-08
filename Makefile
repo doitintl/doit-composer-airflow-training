@@ -179,3 +179,14 @@ lint: shfmt
 shfmt:
 	$(call print-target)
 	$(SHFMT)
+
+# markdownlint
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+MARKDOWNLINT = markdownlint .
+
+lint: markdownlint
+.PHONY: markdownlint
+markdownlint:
+	$(call print-target)
+	$(MARKDOWNLINT)

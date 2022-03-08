@@ -5,11 +5,13 @@ Cloud Composer can be deployed via Console, gcloud cli, API, and Terraform. You 
 In this tutorial, we will create a public IP Composer 1 (Composer 2 only recently became Generally Available) using an Airflow 2.x environment with **gcloud**.
 
 _The bash script below can be found at: `code/deploy-composer.sh`_
+
 ```bash
 {{#include ../../code/deploy-composer.sh}}
 ```
 
 After running the deployment scripts, verify:
+
 1. From [IAM](https://console.cloud.google.com/iam-admin) UI, a service account named `composer-training@${PROJECT_ID}.iam.gserviceaccount.com` has been created, and it has Cloud Storage and BigQuery Admin roles.
 ![composer service account](composer-service-account.png)
 2. From [Composer](https://console.cloud.google.com/composer) UI that a Composer environment named `composer-training` has been created.

@@ -16,6 +16,7 @@ Through this course, you will experience working with Airflow data pipelines wor
 ## Access the mini-book
 
 To run it locally:
+
 1. Clone the repo
 2. Install mdBook following the [guide](https://github.com/rust-lang/mdBook#installation)
 3. Run `make serve`

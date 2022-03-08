@@ -9,6 +9,7 @@ In this chapter, we will create a simple DAG that uses a custom Operator.
 Firstly, let's create a `HelloOperator`. It inherits the `BaseOperator` and overrides the `execute` method. It also takes a parameter called `operator_param`.
 
 `code/plugins/operators/hello_operator.py`
+
 ```python
 {{#include ../../../code/plugins/operators/hello_operator.py}}
 ```
@@ -16,6 +17,7 @@ Firstly, let's create a `HelloOperator`. It inherits the `BaseOperator` and over
 Then we can create a DAG that uses the custom operator `HelloOperator`.
 
 `code/dags/8_custom_operator_dag.py`
+
 ```python
 {{#include ../../../code/dags/8_custom_operator_dag.py}}
 ```

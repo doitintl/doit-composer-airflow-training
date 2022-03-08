@@ -1,6 +1,7 @@
 # Version support and deprecation
 
 ## Versions
+
 Currently, there are two versions of Cloud Composer: The GA version 1 and In-preview version 2.
 
 You can find the full list of Composer versions [here](https://cloud.google.com/composer/docs/concepts/versioning/composer-versions). A typical version looks like this:
@@ -24,6 +25,7 @@ Airflow v1 vs. v2 is more about additional/improved functionality detailed at le
 ## Support and deprecation
 
 ### Composer
+
 Google supports Cloud Composer versions for a period of time after the version is released.
 
 Cloud Composer version support is defined as follows:
@@ -33,8 +35,10 @@ Cloud Composer version support is defined as follows:
 - 18+ months from the release date: Cloud Composer environments running these versions are unsupported and entirely user-managed.
 
 ### Airflow
+
 A particular version of Apache Airflow found in Cloud Composer is **NOT** always an exact match of the corresponding version in upstream Airflow because Cloud Composer uses a patched version of Airflow.
 [This repository](https://github.com/GoogleCloudPlatform/composer-airflow/tree/2.0.2) contains the code for every patched version of Airflow used in Composer, and it is useful for:
+
 - Finding out if a specific commit from the [Airflow open-source project](https://github.com/apache/airflow) is in the Composer version
 - Reproducing issues locally
 - Check how an Operator/Sensor/Hook looks like in the Composer version

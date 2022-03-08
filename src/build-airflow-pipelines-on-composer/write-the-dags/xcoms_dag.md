@@ -5,6 +5,7 @@ Sharing data between Tasks is a common use case in Airflow. For example, a Task 
 XCom (short for cross-communication) is a native feature within Airflow. XComs allow tasks to exchange Task metadata or small amounts of data. XComs can be "pushed" (sent) or "pulled" (retrieved). When a task pushes an XCom, it makes it generally available to other tasks.
 
 There are two ways to push a value to XCom.
+
 1. Use `xcom_pull`
 2. Return the value in your function, and it will be pushed to Xcom automatically.
 
@@ -13,6 +14,7 @@ When a Task (An instance of an Operator) is running, it will get a copy of the T
 Let's create a DAG to exchange value between tasks.
 
 `code/dags/6_xcoms_dag.py`
+
 ```python
 {{#include ../../../code/dags/6_xcoms_dag.py}}
 ```

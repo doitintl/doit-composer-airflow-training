@@ -11,6 +11,7 @@ Firstly, we save and upload a few SQL queries in the Cloud Storage bucket.
 Then, we can create a DAG that uses a for loop to define some tasks. In this example, `DummyOperator` is used for demonstration purpose. As per name, `DummyOperator` does literally nothing. The tasks that use it are evaluated by the scheduler but never processed by the executor.
 
 `code/dags/4_dynamic_dag.py`
+
 ```python
 {{#include ../../../code/dags/4_dynamic_dag.py}}
 ```

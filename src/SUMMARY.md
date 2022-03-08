@@ -25,6 +25,7 @@
     - [CI and CD](case-study/ci-and-cd.md)
 - [Set up and run Airflow locally](set-up-and-run-airflow-locally.md)
 - [What's next?](what-next.md)
------------
+
+---
 
 [Contributors](misc/contributors.md)

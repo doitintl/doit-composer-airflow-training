@@ -15,6 +15,7 @@ The above DAG can be updated, and it should take ~20 seconds to finish.
 The code of the DAG looks like this:
 
 `code/dags/3_parallel_tasks_dag.py`
+
 ```python
 {{#include ../../../code/dags/3_parallel_tasks_dag.py}}
 ```
