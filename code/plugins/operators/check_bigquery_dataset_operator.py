@@ -9,7 +9,7 @@ class CheckBigQueryDatasetOperator(BaseOperator):
         self,
         *,
         dataset_id,
-        gcp_conn_id = "google_cloud_default",
+        gcp_conn_id="google_cloud_default",
         **kwargs,
     ) -> None:
         super().__init__(**kwargs)

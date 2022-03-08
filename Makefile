@@ -129,3 +129,16 @@ lint: prettier
 prettier:
 	$(call print-target)
 	$(PRETTIER)
+
+# black
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# https://github.com/psf/black
+
+BLACK = black --check .
+
+lint: black
+.PHONY: black
+black:
+	$(call print-target)
+	$(BLACK)

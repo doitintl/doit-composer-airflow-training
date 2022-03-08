@@ -111,8 +111,14 @@ with DAG(
     )
 
     get_latest_run_date >> check_run_date >> [finish_run, kick_off_run]
-    kick_off_run >> check_bigquery_dataset >> [
-        load_accounts_csv,
-        load_activities_csv,
-        load_items_csv,
-    ] >> generate_nudges >> finish_run
+    (
+        kick_off_run
+        >> check_bigquery_dataset
+        >> [
+            load_accounts_csv,
+            load_activities_csv,
+            load_items_csv,
+        ]
+        >> generate_nudges
+        >> finish_run
+    )

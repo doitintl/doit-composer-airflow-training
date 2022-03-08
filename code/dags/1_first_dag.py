@@ -33,7 +33,7 @@ start = BashOperator(
 
 check_ip = BashOperator(
     task_id="check_ip",
-    bash_command='curl checkip.amazonaws.com',
+    bash_command="curl checkip.amazonaws.com",
     dag=dag,
 )
 
