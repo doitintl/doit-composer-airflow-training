@@ -10,6 +10,7 @@ LC_ALL=C
 export LC_ALL
 
 find . -type f \
+    -not -path './.docops/lock/*' \
     -not -path './.git/*' \
     -not -exec git check-ignore --quiet {} \; \
     -exec grep -qI . {} \; \

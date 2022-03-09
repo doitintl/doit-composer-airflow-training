@@ -16,6 +16,7 @@ RESET='\x1b[0m'
 
 tmp_errors="$(mktemp)"
 misspell -locale US . |
+    grep -vE '[^:]+/Google/[^:]+:' |
     grep -vE '[^:]+\.css:' |
     grep -vE '[^:]+\.js:' |
     grep -vE '[^:]+\.svg:' \

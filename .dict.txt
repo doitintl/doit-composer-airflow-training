@@ -36,6 +36,7 @@ gsutil
 guessindentation
 healthcheck
 iec
+ignorecase
 isready
 kubernetes
 kwargs
@@ -49,6 +50,8 @@ mktemp
 numfmt
 optipng
 posix
+proselintjs
+proselintrc
 proto
 psycopg
 pyc
@@ -61,8 +64,11 @@ setsid
 shellcheck
 shfmt
 taskflow
+textlint
 tlsv
+tmpl
 triggerer
+ui
 uid
 utf
 venv

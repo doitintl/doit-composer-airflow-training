@@ -170,7 +170,7 @@ shellcheck:
 # shfmt
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# https://github.com/mvdan/sh
+# https://github.com/mvdan/sh#shfmt
 
 SHFMT = shfmt -d -p -i 4 .
 
@@ -183,6 +183,8 @@ shfmt:
 # markdownlint
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# https://github.com/markdownlint/markdownlint
+
 MARKDOWNLINT = markdownlint .
 
 lint: markdownlint
@@ -193,6 +195,8 @@ markdownlint:
 
 # cspell
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# https://github.com/streetsidesoftware/cspell
 
 CSPELL := $(BIN_DIR)/find.sh | xargs -0 \
 	cspell --no-progress --no-summary --config .cspell.json
@@ -219,7 +223,7 @@ misspell:
 
 # https://github.com/sapegin/proselint
 
-PROSELINTJS := $(BIN_DIR)/find.sh | xargs -0 \
+PROSELINTJS := $(BIN_DIR)/find.sh -name '*.md' | xargs -0 \
 	xargs -0 proselintjs --config .proselintrc.json
 
 lint: proselintjs
@@ -248,20 +252,21 @@ textlint:
 # https://github.com/errata-ai/vale
 
 VALE_STYLES_DIR = .vale/styles
-GOOGLE_ZIP = Google-0.3.3.zip
+GOOGLE_DIR = Google
+GOOGLE_ZIP = $(GOOGLE_DIR)-0.3.3.zip
 
 VALE := ./bin/find.sh | xargs -0 \
 	vale \
 		--config .vale.ini \
 		--minAlertLevel warning \
-		--output=.vale/templates/cli.tmpl \
 		--no-wrap
 
 check: vale
 .PHONY: vale
 vale:
 	$(call print-target)
-	cd $(VALE_STYLES_DIR) && unzip $(GOOGLE_ZIP)
+	@ cd $(VALE_STYLES_DIR) && rm -rf $(GOOGLE_DIR)
+	@ cd $(VALE_STYLES_DIR) && unzip $(GOOGLE_ZIP) >/dev/null
 	$(VALE)
 
 # markdown-link-check
