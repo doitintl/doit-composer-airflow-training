@@ -15,7 +15,9 @@ Through this course, you will experience working with Airflow data pipelines on 
 
 ## Access the mini-book
 
-To run it locally:
+This mini-book has been deployed to GitHub pages, you can access it from [here](https://doitintl.github.io/doit-composer-airflow-training/).
+
+You can also run it locally:
 
 1. Clone the repository
 2. Install mdBook following the [guide](https://github.com/rust-lang/mdBook#installation)
