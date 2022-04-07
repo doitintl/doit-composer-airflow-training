@@ -1,6 +1,6 @@
 # Summary
 
-- [Introduction](../README.md)
+- [Introduction](README.md)
 - [Apache Airflow and its concepts](apache-airflow-and-its-concepts.md)
 - [Google Cloud Composer](google-cloud-composer/README.md)
   - [Benefits](google-cloud-composer/benefits.md)
