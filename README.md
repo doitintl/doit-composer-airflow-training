@@ -2,7 +2,7 @@
 
 This repository aims to provide a short course about the basics of [Apache Airflow](https://airflow.apache.org/) and how to run it on [Google Cloud Composer](https://cloud.google.com/composer) on Google Cloud.
 
-The repository uses [mdBook](https://rust-lang.github.io/mdBook/) to create a mini-book tutorial. You can find the source code of this mini-book under the code folder.
+The repository uses [mdBook](https://rust-lang.github.io/mdBook/) to create a mini-book tutorial. You can find the source code of this mini-book under the _code_ folder.
 
 ## Learning Goals
 

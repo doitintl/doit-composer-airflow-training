@@ -18,7 +18,7 @@ Yes, we found the `GCSToBigQueryOperator`. Following it's [documentation](https:
 Create a file named `9_generate_nudges_dag.py` that contains the following code:
 
 ```python
-{{#include ../../code/dags/9_generate_nudges_dag.py:66:103}}
+{{#include ../../code/dags/9_generate_nudges_dag.py:68:111}}
 ```
 
 The `generate_nudges` task runs a BigQuery query and saves the results in a BigQuery table. It may look like an ordinary job. But unfortunately, there isn't an existing Operator that does the job. We need to create a custom Operator. In this custom Operator, we can use the built-in `BigQueryHook` to interact with BigQuery. We can find its source code on [GitHub](https://github.com/apache/airflow/blob/main/airflow/providers/google/cloud/hooks/bigquery.py#L66).
@@ -34,7 +34,7 @@ Create a file named `generate_nudges_operator.py` that contains the following co
 And the task looks like this:
 
 ```python
-{{#include ../../code/dags/9_generate_nudges_dag.py:105:109}}
+{{#include ../../code/dags/9_generate_nudges_dag.py:107:111}}
 ```
 
 ## Add other tasks
@@ -54,7 +54,7 @@ Create a file named `check_bigquery_dataset_operator.py` that contains the follo
 And the task looks like this:
 
 ```python
-{{#include ../../code/dags/9_generate_nudges_dag.py:61:64}}
+{{#include ../../code/dags/9_generate_nudges_dag.py:63:66}}
 ```
 
 Now the DAG looks like this:
@@ -81,7 +81,7 @@ Let's dig into the new tasks.
 As mentioned above, we can check if a file named as current date exists in the GCS bucket. To do this, we can use the `GCSListObjectsOperator` from Airflow built-in libraries. The task looks like this:
 
 ```python
-{{#include ../../code/dags/9_generate_nudges_dag.py:48:52}}
+{{#include ../../code/dags/9_generate_nudges_dag.py:50:54}}
 ```
 
 From the [code](https://github.com/apache/airflow/blob/main/airflow/providers/google/cloud/operators/gcs.py#L279) on Github, it returns the URI of the file on GCS or empty array(if the file does not exist). In Airflow Operator, any value that is returned by `execute` function is stored in `xcom`.
@@ -93,7 +93,7 @@ Now we have a value in `xcom`, let's move on to the next task.
 In this task, we can use `BranchPythonOperator` to decide if this particular run should continue. The task looks like this:
 
 ```python
-{{#include ../../code/dags/9_generate_nudges_dag.py:54:56}}
+{{#include ../../code/dags/9_generate_nudges_dag.py:56:58}}
 ```
 
 And the `branch_func`:
@@ -105,7 +105,7 @@ And the `branch_func`:
 From here, Airflow will decide if the DAG run should continue loading data or finish. To make the pipeline more user-friendly, we can use two `DummyOperator` to represent `kick_off_run` and `finish_run` tasks.
 
 ```python
-{{#include ../../code/dags/9_generate_nudges_dag.py:58:59}}
+{{#include ../../code/dags/9_generate_nudges_dag.py:60:61}}
 ```
 
 ## Summary

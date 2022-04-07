@@ -31,7 +31,7 @@ A Cloud Composer environment contains multiple components, below are some of the
 
 ## Customer and tenant projects
 
-Cloud Composer runs on both customer and tenant(Google-managed) projects; Composer distributes the environment's resources between a tenant and a customer project. The resources are deployed to different projects because of varying environment setups.
+Cloud Composer runs on both customer and tenant (Google-managed) projects; Composer distributes the environment's resources between a tenant and a customer project. The resources are deployed to different projects because of varying environment setups.
 
 However, regardless of which environment setup and Composer versions you choose, there is:
 
@@ -73,7 +73,7 @@ If the [Domain Restricted Sharing (DRS) organizational policy](https://cloud.goo
 
 ### Comparison of Composer 1 and 2
 
-Composer 2 is the future version of Composer. Most of the users are still using Composer 1 because Composer 2 is still in preview. We can expect Composer 1 to be retired soon, and Composer 2 will be the only supported one.
+Composer 2 is the future version of Composer. Most of the users are still using Composer 1 because Composer 1 is still the default. We can expect Composer 1 to be retired soon, and Composer 2 will be the only supported one.
 From the above architecture diagrams, there are a few things that are some differences between these two versions:
 
 1. The significant improvement of Composer 2 is **autoscaling**; it leverages [GKE Autopilot](https://cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview) feature, meaning the Composer environment can be automatically scaled up to handle more workloads and scale down to reduce cost.

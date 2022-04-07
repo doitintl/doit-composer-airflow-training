@@ -2,9 +2,9 @@
 
 ## Versions
 
-There are two versions of Cloud Composer: The GA version 1 and In-preview version 2.
+There are two versions of Cloud Composer, Composer 1 and 2. You can find the full list of Composer versions [here](https://cloud.google.com/composer/docs/concepts/versioning/composer-versions).
 
-You can find the full list of Composer versions [here](https://cloud.google.com/composer/docs/concepts/versioning/composer-versions). A typical version looks like this:
+A typical version looks like this:
 
 > composer-1.17.5-airflow-2.1.4
 
@@ -12,15 +12,15 @@ In the version identifier, `1.17.5` is the version of Composer, while `2.1.4` is
 
 You can consider each `Composer` version contains all the close-sourced Google deployments and hosting code and each `Airflow` version contains the open-sourced code from Apache Airflow code that is hosted on GitHub [repository](https://github.com/apache/airflow).
 
-## Understanding Composer vs. Airflow Versions
+## Understanding Composer and Airflow versions
 
 While there are two versions of Cloud Composer and two versions of Apache Airflow, each version of Composer _does not_ directly map to a version of Airflow.
 
 **Composer v1 has support for both Airflow v1 and v2, while Composer v2 only supports Airflow v2.**
 
-As mentioned in Section 3.2, the primary difference between Composer 1 and 2 are in how Composer 2 has moved the web server from App Engine to _Google Kubernetes Engine_ (GKE) for Composer 2 to take advantage of GKE Autopilot for autoscaling. Composer 1, by contrast, does not support an autoscaling environment.
+As mentioned in Section 3.2, the primary difference between Composer 1 and 2 is the involvement of GKE Autopilot. Composer 2 takes advantage of GKE Autopilot for autoscaling. Composer 1, by contrast, does not support autoscaling.
 
-Airflow v1 vs. v2 is more about additional/improved functionality detailed at length [here](https://airflow.apache.org/blog/airflow-two-point-oh-is-here/). The most anticipated new features in Airflow include: Easier to author DAGs, 'massive' scheduler performance improvements, high-availability support for the job scheduler, and an improved UI.
+The differences of Airflow 1 and 2 are more about additional/improved functionality detailed at length [here](https://airflow.apache.org/blog/airflow-two-point-oh-is-here/). The most anticipated new features in Airflow 2 include: Easier to author DAGs, massive scheduler performance improvements, high-availability support for the job scheduler, and an improved UI.
 
 ## Support and deprecation
 

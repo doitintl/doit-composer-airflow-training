@@ -10,9 +10,9 @@ An e-commerce company (let's call it `Cell-mate`) is a famous online shop sellin
 
 The `Cell-mate` has three primary data sources:
 
-- Accounts: it contains all the information from the accounts of their customers.
-- Items: it contains all the items that are listed on the <!-- textlint-disable terminology -->website<!-- textlint-enable -->.
-- Activities: it contains all the viewer activities from the customers.
+- Accounts&mdash;It contains all the information from the accounts of their customers.
+- Items&mdash;It contains all the items that are listed on the <!-- textlint-disable terminology -->website<!-- textlint-enable -->.
+- Activities&mdash;It contains all the viewer activities from the customers.
 
 ## Goal
 

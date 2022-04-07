@@ -9,8 +9,6 @@ The Airflow UI allows you to monitor and troubleshoot your data pipelines. It ca
 - Pools
 - XComs
 
-Let's take a tour of the Airflow UI.
-
 ## DAGs view
 
 The default page of Airflow UI is the DAGs view. It lists all the DAGs that are available on this Airflow instance. You can see exactly how many tasks succeeded, failed, or are still running.
