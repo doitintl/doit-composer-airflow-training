@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Architecture - Getting started with Apache Airflow on Cloud Composer</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../apache-airflow-and-its-concepts.html"><strong aria-hidden="true">2.</strong> Apache Airflow and its concepts</a></li><li class="chapter-item expanded "><a href="../google-cloud-composer/index.html"><strong aria-hidden="true">3.</strong> Google Cloud Composer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../google-cloud-composer/benefits.html"><strong aria-hidden="true">3.1.</strong> Benefits</a></li><li class="chapter-item expanded "><a href="../google-cloud-composer/architecture.html" class="active"><strong aria-hidden="true">3.2.</strong> Architecture</a></li><li class="chapter-item expanded "><a href="../google-cloud-composer/version-support-and-deprecation.html"><strong aria-hidden="true">3.3.</strong> Version support and deprecation</a></li><li class="chapter-item expanded "><a href="../google-cloud-composer/limitations.html"><strong aria-hidden="true">3.4.</strong> Limitations</a></li></ol></li><li class="chapter-item expanded "><a href="../build-airflow-pipelines-on-composer/index.html"><strong aria-hidden="true">4.</strong> Build Airflow pipelines on Composer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../build-airflow-pipelines-on-composer/deploy-a-composer-environment.html"><strong aria-hidden="true">4.1.</strong> Deploy a Composer environment</a></li><li class="chapter-item expanded "><a href="../build-airflow-pipelines-on-composer/a-tour-of-airflow-ui.html"><strong aria-hidden="true">4.2.</strong> A tour of the Airflow UI</a></li><li class="chapter-item expanded "><a href="../build-airflow-pipelines-on-composer/write-the-dags/index.html"><strong aria-hidden="true">4.3.</strong> Write the DAGs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../build-airflow-pipelines-on-composer/write-the-dags/first_dag.html"><strong aria-hidden="true">4.3.1.</strong> First DAG</a></li><li class="chapter-item expanded "><a href="../build-airflow-pipelines-on-composer/write-the-dags/context_manager_dag.html"><strong aria-hidden="true">4.3.2.</strong> Context manager DAG</a></li><li class="chapter-item expanded "><a href="../build-airflow-pipelines-on-composer/write-the-dags/parallel_tasks_dag.html"><strong aria-hidden="true">4.3.3.</strong> Parallel tasks DAG</a></li><li class="chapter-item expanded "><a href="../build-airflow-pipelines-on-composer/write-the-dags/dynamic_tasks_dag.html"><strong aria-hidden="true">4.3.4.</strong> Dynamic tasks DAG</a></li><li class="chapter-item expanded "><a href="../build-airflow-pipelines-on-composer/write-the-dags/branching_dag.html"><strong aria-hidden="true">4.3.5.</strong> Branching DAG</a></li><li class="chapter-item expanded "><a href="../build-airflow-pipelines-on-composer/write-the-dags/xcoms_dag.html"><strong aria-hidden="true">4.3.6.</strong> Xcoms DAG</a></li><li class="chapter-item expanded "><a href="../build-airflow-pipelines-on-composer/write-the-dags/python_operator_and_taskflow_dag.html"><strong aria-hidden="true">4.3.7.</strong> PythonOperator and Taskflow Dag</a></li><li class="chapter-item expanded "><a href="../build-airflow-pipelines-on-composer/write-the-dags/custom_operator_dag.html"><strong aria-hidden="true">4.3.8.</strong> Custom operator DAG</a></li></ol></li><li class="chapter-item expanded "><a href="../case-study/index.html"><strong aria-hidden="true">4.4.</strong> Case study: generate nudges</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../case-study/create-nudges-dag.html"><strong aria-hidden="true">4.4.1.</strong> Create nudges DAG</a></li><li class="chapter-item expanded "><a href="../case-study/testing.html"><strong aria-hidden="true">4.4.2.</strong> Testing</a></li><li class="chapter-item expanded "><a href="../case-study/ci-and-cd.html"><strong aria-hidden="true">4.4.3.</strong> CI and CD</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../set-up-and-run-airflow-locally.html"><strong aria-hidden="true">5.</strong> Set up and run Airflow locally</a></li><li class="chapter-item expanded "><a href="../what-next.html"><strong aria-hidden="true">6.</strong> What's next?</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../misc/contributors.html">Contributors</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Getting started with Apache Airflow on Cloud Composer</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="cloud-composer-architecture"><a class="header" href="#cloud-composer-architecture">Cloud Composer Architecture</a></h1>
+<p>In this section, we will talk about the architecture of Cloud Composer.</p>
+<h2 id="composer-components"><a class="header" href="#composer-components">Composer components</a></h2>
+<p>A Cloud Composer environment contains multiple components, below are some of the important ones:</p>
+<ul>
+<li>Airflow Webserver
+<ul>
+<li>It is a visual management interface powered by <a href="https://flask-appbuilder.readthedocs.io/">Flask-AppBuilder</a></li>
+<li>It provides the ability to
+<ul>
+<li>View status of DAGs and their status</li>
+<li>Display logs from each DAG and worker</li>
+<li>Act on the DAG status (pause, unpause, trigger)</li>
+<li>Configure Airflow, such as variables, connections, etc</li>
+<li>Each view the code of DAGs</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Airflow scheduler
+<ul>
+<li>It monitors all tasks and DAGs, then triggers the task instances once their dependencies are complete</li>
+<li>Behind the scenes, the scheduler spins up a subprocess, which monitors and stays in sync with all DAGs in the specified DAG directory. Once per minute, by default, the scheduler collects DAG parsing results and checks whether any active task can be triggered</li>
+</ul>
+</li>
+<li>Airflow worker
+<ul>
+<li>It executes individual tasks from DAGs by taking them from the Redis queue.</li>
+</ul>
+</li>
+<li>Airflow database hosted on CloudSQL
+<ul>
+<li>It stores all the information of Airflow, including DAGs, task information, configs, etc</li>
+</ul>
+</li>
+<li>Airflow buckets
+<ul>
+<li>When you create an environment, Cloud Composer creates a Cloud Storage bucket and associates the bucket with your Composer environment.</li>
+<li>You can store custom code in the Cloud Storage bucket, including DAGs, plugins, and other resources.</li>
+<li>Behind the scene, Composer uses <a href="https://github.com/GoogleCloudPlatform/gcsfuse">gcsfuse</a> to sync all the content to Airflow workers and webserver.</li>
+<li>You can find a Google <a href="https://cloud.google.com/composer/docs/concepts/cloud-storage#folders_in_the_bucket">document</a> that shows the mapping list between the folders in the bucket to Airflow folders.</li>
+</ul>
+</li>
+<li>Redis queue
+<ul>
+<li>It holds a queue of individual tasks from your DAGs. Airflow schedulers fill the queue; Airflow workers take their tasks from it</li>
+</ul>
+</li>
+</ul>
+<h2 id="customer-and-tenant-projects"><a class="header" href="#customer-and-tenant-projects">Customer and tenant projects</a></h2>
+<p>Cloud Composer runs on both customer and tenant (Google-managed) projects; Composer distributes the environment's resources between a tenant and a customer project. The resources are deployed to different projects because of varying environment setups.</p>
+<p>However, regardless of which environment setup and Composer versions you choose, there is:</p>
+<ul>
+<li>A <em>Google Kubernetes Engine</em> (GKE) cluster in the customer project that runs the Airflow workloads</li>
+<li>A CloudSQL instance on the tenant project, and</li>
+<li>A Cloud Storage bucket to store DAGs and plugins</li>
+</ul>
+<h2 id="different-composer-setups"><a class="header" href="#different-composer-setups">Different Composer setups</a></h2>
+<p>Below are the different setups of Composer 1 and 2</p>
+<h3 id="composer-1"><a class="header" href="#composer-1">Composer 1</a></h3>
+<p><a href="https://cloud.google.com/composer/docs/concepts/architecture#public-ip">Public IP</a></p>
+<p><img src="https://cloud.google.com/composer/docs/images/composer-1-public-ip-architecture.svg" alt="Public IP" /></p>
+<p><a href="https://cloud.google.com/composer/docs/concepts/architecture#private-ip">Private IP</a></p>
+<p><img src="https://cloud.google.com/composer/docs/images/composer-1-private-ip-architecture.svg" alt="Private IP" /></p>
+<!-- textlint-disable stop-words -->
+<p><a href="https://cloud.google.com/composer/docs/concepts/architecture#private-ip-drs">Private IP with DRS</a></p>
+<p>If the <a href="https://cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints">Domain Restricted Sharing (DRS) organizational policy</a> is turned on in the project, then Cloud Composer uses the Private IP with DRS environment architecture.</p>
+<!-- textlint-enable -->
+<p><img src="https://cloud.google.com/composer/docs/images/composer-1-private-ip-drs-architecture.svg" alt="Private IP with DRS" /></p>
+<h3 id="composer-2"><a class="header" href="#composer-2">Composer 2</a></h3>
+<p><a href="https://cloud.google.com/composer/docs/composer-2/environment-architecture#public-ip">Public IP</a></p>
+<p><img src="https://cloud.google.com/composer/docs/images/composer-2-public-ip-architecture.svg" alt="Public IP" /></p>
+<p><a href="https://cloud.google.com/composer/docs/composer-2/environment-architecture#private-ip">Private IP</a></p>
+<p><img src="https://cloud.google.com/composer/docs/images/composer-2-private-ip-architecture.svg" alt="Private IP" /></p>
+<h3 id="comparison-of-composer-1-and-2"><a class="header" href="#comparison-of-composer-1-and-2">Comparison of Composer 1 and 2</a></h3>
+<p>Composer 2 is the future version of Composer. Most of the users are still using Composer 1 because Composer 1 is still the default. We can expect Composer 1 to be retired soon, and Composer 2 will be the only supported one.
+From the above architecture diagrams, there are a few things that are some differences between these two versions:</p>
+<ol>
+<li>The significant improvement of Composer 2 is <strong>autoscaling</strong>; it leverages <a href="https://cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview">GKE Autopilot</a> feature, meaning the Composer environment can be automatically scaled up to handle more workloads and scale down to reduce cost.</li>
+<li>Composer 2 only supports Airflow 2 and Python 3.8+. Suppose there is a requirement of using Python 2(please consider upgrade to Python 3) and Airflow 1.10.*, Composer 1 is the only option.</li>
+<li>In Composer 2, the Airflow Webserver is moved to GKE from App Engine running on the tenant project.</li>
+</ol>
+<p>You can find more details of the differences between the two Composer versions from <a href="https://cloud.google.com/composer/docs/composer-2/composer-versioning-overview#major-versions">here</a>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../google-cloud-composer/benefits.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../google-cloud-composer/version-support-and-deprecation.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../google-cloud-composer/benefits.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../google-cloud-composer/version-support-and-deprecation.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
