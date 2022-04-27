@@ -19,7 +19,7 @@ This mini-book has been deployed to GitHub pages, you can access it from [here](
 
 You can also run it locally:
 
-1. Clone the repository
+1. Clone this [GitHub repository](https://github.com/doitintl/doit-composer-airflow-training/)
 2. Install mdBook following the [guide](https://github.com/rust-lang/mdBook#installation)
 3. Run `make serve`
 4. In your browser, navigate to `http://localhost:3000`
@@ -30,4 +30,4 @@ You can also run it locally:
 
 ## Contribution
 
-If you'd like to get involved, either fixing a grammar mistake or adding a new chapter, feel free to send a pull request.
+If you'd like to get involved, either fixing a grammar mistake or adding a new chapter, feel free to send a [pull request](https://github.com/doitintl/doit-composer-airflow-training/pulls).
