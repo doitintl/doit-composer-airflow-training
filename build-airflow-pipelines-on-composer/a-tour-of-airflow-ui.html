@@ -157,7 +157,7 @@
 <h3 id="tree-view"><a class="header" href="#tree-view">Tree view</a></h3>
 <p>After clicking the DAG name, the tree view is the default view.</p>
 <p>A tree representation of the DAG that spans across time. You can tell each task's status in different colors.</p>
-<p><img src="https://airflow.apache.org/docs/apache-airflow/stable/_images/tree.png" alt="Tree view" /></p>
+<p><img src="https://airflow.apache.org/docs/apache-airflow/2.2.5/_images/tree.png" alt="Tree view" /></p>
 <h3 id="graph-view"><a class="header" href="#graph-view">Graph view</a></h3>
 <p>The graph view is my favorite view when I troubleshoot the issue with Airflow UI. It visualizes your DAG's dependencies and their current status for a specific run.</p>
 <p><img src="https://airflow.apache.org/docs/apache-airflow/stable/_images/graph.png" alt="Graph view" /></p>
@@ -193,7 +193,7 @@
 <h3 id="connection-view"><a class="header" href="#connection-view">Connection view</a></h3>
 <p>In the context of Airflow, a <code>connection</code> stores information such as hostname, port, login, and passwords to other systems and services. The pipeline code you will author will reference the <code>conn_id</code> of the Connection objects.</p>
 <p>On the connection view page, connections information is shown and can be edited:</p>
-<p><img src="https://airflow.apache.org/docs/apache-airflow/stable/_images/connections.png" alt="Connection view" /></p>
+<p><img src="https://airflow.apache.org/docs/apache-airflow/2.2.5/_images/connections.png" alt="Connection view" /></p>
 <p>In the <a href="deploy-a-composer-environment.html">last chapter</a>, we deployed a Cloud Composer environment with a service account. In the Airflow pipelines in Composer, by default, they will use this service account to authorize all the Google Cloud API calls. This saves time setting up Google Cloud connection on the Airflow configuration view page.</p>
 <h3 id="xcoms-view"><a class="header" href="#xcoms-view">XComs view</a></h3>
 <p><a href="https://airflow.apache.org/docs/apache-airflow/stable/concepts/xcoms.html">XComs</a> (short for <em>cross-communications</em>) is a mechanism that let tasks talk to each other, as by default, Tasks are entirely isolated and may be running on completely different machines.</p>
