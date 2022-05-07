@@ -172,12 +172,6 @@ start = BashOperator(
     dag=dag,
 )
 
-check_ip = BashOperator(
-    task_id=&quot;check_ip&quot;,
-    bash_command=&quot;curl checkip.amazonaws.com&quot;,
-    dag=dag,
-)
-
 end = BashOperator(
     task_id=&quot;end&quot;,
     bash_command='echo &quot;stop&quot;',
@@ -185,7 +179,7 @@ end = BashOperator(
 )
 
 # Step-5. Define task sequence and dependencies
-start &gt;&gt; check_ip &gt;&gt; end
+start &gt;&gt; end
 </code></pre>
 <p><img src="airflow-first-dag.png" alt="First dag" /></p>
 <p>Note that we created a DAG object in this DAG, then associated it with every task in the pipeline. The DAG code can be verbose if you have many tasks in the pipeline.</p>
