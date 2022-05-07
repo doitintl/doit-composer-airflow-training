@@ -31,12 +31,6 @@ start = BashOperator(
     dag=dag,
 )
 
-check_ip = BashOperator(
-    task_id="check_ip",
-    bash_command="curl checkip.amazonaws.com",
-    dag=dag,
-)
-
 end = BashOperator(
     task_id="end",
     bash_command='echo "stop"',
@@ -44,4 +38,4 @@ end = BashOperator(
 )
 
 # Step-5. Define task sequence and dependencies
-start >> check_ip >> end
+start >> end
