@@ -35,7 +35,7 @@ After clicking the DAG name, the tree view is the default view.
 
 A tree representation of the DAG that spans across time. You can tell each task's status in different colors.
 
-![Tree view](https://airflow.apache.org/docs/apache-airflow/stable/_images/tree.png)
+![Tree view](https://airflow.apache.org/docs/apache-airflow/2.2.5/_images/tree.png)
 
 ### Graph view
 
@@ -99,7 +99,7 @@ In the context of Airflow, a `connection` stores information such as hostname, p
 
 On the connection view page, connections information is shown and can be edited:
 
-![Connection view](https://airflow.apache.org/docs/apache-airflow/stable/_images/connections.png)
+![Connection view](https://airflow.apache.org/docs/apache-airflow/2.2.5/_images/connections.png)
 
 In the [last chapter](deploy-a-composer-environment.md), we deployed a Cloud Composer environment with a service account. In the Airflow pipelines in Composer, by default, they will use this service account to authorize all the Google Cloud API calls. This saves time setting up Google Cloud connection on the Airflow configuration view page.
 
